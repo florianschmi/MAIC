@@ -1,0 +1,178 @@
+PREFIX maic: <http://www.semanticweb.org/maic#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+##################################################################################################################
+### Analysis to be used in DirectMaterialRuleShapes
+##################################################################################################################
+### Inserts the object property maic:hasSameMaterialTypeProperties to connect Component individuals to Direct_Material individuals if they have the same Typology, materialType, and fireMaterialClassification.
+### This analysis is to be used in ComponentMaterialRuleShapes.
+INSERT {
+    ?component maic:hasSameMaterialTypeProperties ?direct_material
+}
+WHERE {
+    ?component a maic:Component .
+    ?component maic:hasType ?component_type .
+    ?component maic:hasMaterialType ?material .
+    ?material maic:materialType ?component_material_type .
+    ?material maic:fireMaterialClassification ?component_fire_material_classification .
+    ?direct_material a maic:Direct_Material .
+    ?direct_material maic:hasType ?direct_material_type .
+    ?direct_material maic:materialType ?direct_material_material_type .
+    ?direct_material maic:fireMaterialClassification ?direct_material_fire_material_classification .
+    FILTER (?component_type = ?direct_material_type && ?component_material_type = ?direct_material_material_type && ?component_fire_material_classification = ?direct_material_fire_material_classification) .
+};
+
+
+
+### Inserts the object property maic:couldBeProducedUsing to connect maic:Component individuals to maic:Direct_Material individuals if they have the equal or larger maic:dimension_x, maic:dimension_y, and maic:dimension_z.
+### This analysis is to be used in ComponentMaterialRuleShapes.
+INSERT {
+    ?component maic:couldBeProducedUsing ?direct_material
+}
+WHERE {
+    ?component a maic:Component .
+    ?component maic:hasShapeAndSize ?component_shape_and_size .
+    ?component_shape_and_size maic:dimension_x ?component_dimension_x .
+    ?component_shape_and_size maic:dimension_y ?component_dimension_y .
+    ?component_shape_and_size maic:dimension_z ?component_dimension_z .
+    ?component maic:hasSameMaterialTypeProperties ?direct_material .
+    ?direct_material maic:hasShapeAndSize ?direct_material_shape_and_size .
+    ?direct_material_shape_and_size maic:dimension_x ?direct_material_dimension_x .
+    ?direct_material_shape_and_size maic:dimension_y ?direct_material_dimension_y .
+    ?direct_material_shape_and_size maic:dimension_z ?direct_material_dimension_z .
+    FILTER (?component_dimension_x <= ?direct_material_dimension_x && ?component_dimension_y <= ?direct_material_dimension_y && ?component_dimension_z <= ?direct_material_dimension_z) .
+};
+
+
+
+### Inserts the object property maic:canBeProducedUsing to connect maic:Component individuals to maic:Direct_Material individuals if their ShapeAndSize can be produced in the construction process.
+### This analysis is to be used in ComponentMaterialRuleShapes.
+INSERT {
+    ?component maic:canBeProducedUsing ?direct_material .
+}
+WHERE {
+    ?component a maic:Component .
+    ?component maic:hasShapeAndSize ?component_shape_and_size .
+    ?component_shape_and_size maic:dimension_x ?component_dimension_x .
+    ?component_shape_and_size maic:dimension_y ?component_dimension_y .
+    ?component_shape_and_size maic:dimension_z ?component_dimension_z .
+    ?component maic:couldBeProducedUsing ?direct_material .
+    ?direct_material maic:hasShapeAndSize ?direct_material_shape_and_size .
+    ?direct_material_shape_and_size maic:dimension_x ?direct_material_dimension_x .
+    ?direct_material_shape_and_size maic:dimension_y ?direct_material_dimension_y .
+    ?direct_material_shape_and_size maic:dimension_z ?direct_material_dimension_z .
+    ?direct_material maic:hasCapability ?capability .
+    ?capability maic:hasAllowedNegativeItemShapeAndSize_max ?shape_and_size_max .
+    ?shape_and_size_max maic:dimension_x ?negative_dimension_x_max .
+    ?shape_and_size_max maic:dimension_y ?negative_dimension_y_max .
+    ?shape_and_size_max maic:dimension_z ?negative_dimension_z_max .
+    ?capability maic:hasAllowedNegativeItemShapeAndSize_min ?shape_and_size_min .
+    ?shape_and_size_min maic:dimension_x ?negative_dimension_x_min .
+    ?shape_and_size_min maic:dimension_y ?negative_dimension_y_min .
+    ?shape_and_size_min maic:dimension_z ?negative_dimension_z_min .
+    BIND(?direct_material_dimension_z - ?component_dimension_z AS ?foo) .
+    FILTER ((?direct_material_dimension_x - ?component_dimension_x  <= ?negative_dimension_x_max || ?direct_material_dimension_x - ?component_dimension_x = 0) && (?negative_dimension_x_min <= ?direct_material_dimension_x - ?component_dimension_x || ?direct_material_dimension_x - ?component_dimension_x = 0) && (?direct_material_dimension_y - ?component_dimension_y <= ?negative_dimension_y_max || ?direct_material_dimension_y - ?component_dimension_y = 0) && (?negative_dimension_y_min <= ?direct_material_dimension_y - ?component_dimension_y || ?direct_material_dimension_y - ?component_dimension_y = 0) && (?direct_material_dimension_z - ?component_dimension_z <= ?negative_dimension_z_max || ?direct_material_dimension_z - ?component_dimension_z = 0) && (?negative_dimension_z_min <= ?direct_material_dimension_z - ?component_dimension_z || ?direct_material_dimension_z - ?component_dimension_z = 0)) .
+};
+
+
+
+### Inserts the object property maic:canBeProducedUsing to connect maic:Component individuals to maic:Direct_Material individuals if their ShapeAndSize can be delivered to the production process by subcontractors.
+### This analysis is to be used in ComponentMaterialRuleShapes.
+INSERT {
+  ?component maic:canBeProducedUsing ?direct_material .
+}
+WHERE {
+    ?component a maic:Component .
+    ?component maic:hasSameMaterialTypeProperties ?direct_material .
+    ?direct_material maic:hasAnyShapeAndSize ?direct_material_has_any_shape_and_size .
+    FILTER (?direct_material_has_any_shape_and_size = TRUE) .
+};
+
+
+
+### Inserts the object property maic:isProducedUsing to connect maic:Component individuals to maic:Direct_Material individuals if a direct material is suited for production and it is the least expensive choice.
+### This analysis is to be used in ComponentMaterialRuleShapes.
+INSERT {
+    ?component maic:isProducedUsing ?direct_material_choice .
+}
+WHERE {
+  {
+    SELECT ?component (SAMPLE(?direct_material) AS ?direct_material_choice)
+    WHERE {
+      ?component a maic:Component .
+      ?component maic:canBeProducedUsing ?direct_material .
+      ?direct_material maic:hasResourceCost ?direct_material_cost .
+      {
+        SELECT ?component (MIN(?direct_material_cost) AS ?direcet_material_cost_min)
+        WHERE {
+          ?component a maic:Component .
+          ?component maic:canBeProducedUsing ?direct_material .
+          ?direct_material maic:hasResourceCost ?direct_material_cost .
+        }
+        GROUP BY ?component
+      }
+      FILTER (?direcet_material_cost_min = ?direct_material_cost) .
+    }
+    GROUP BY ?component
+  }
+};
+
+
+##################################################################################################################
+### Analysis to be used in ConnectionRuleShapes
+##################################################################################################################
+### Inserts the object property maic:hasSameConnectionTypeProperties to connect maic:Intersection individuals to maic:Direct_Material individuals if they have the same maic:materialType and maic:fireMaterialClassification
+### This analysis is to be used in ConnectionMaterialRuleShapes.
+INSERT {
+    ?intersection maic:canBeProducedUsing ?direct_material .
+}
+WHERE {
+  ?component a maic:Component .
+  ?component maic:forms ?intersection .
+  ?intersection maic:connectionType ?intersection_connection_type .
+  ?component maic:isProducedUsing ?direct_material_chosen .
+  ?direct_material_chosen maic:hasCapability ?direct_material_chosen_capability .
+  {
+  SELECT *
+  WHERE {
+    ?direct_material a maic:Direct_Material .
+    ?direct_material maic:connectionType ?connection_material_connection_type .
+    ?direct_material maic:hasCapability ?connection_material_capability .
+    }
+  }
+  FILTER(?direct_material_chosen_capability = ?connection_material_capability && ?intersection_connection_type = ?connection_material_connection_type)
+};
+
+
+
+### Inserts the object property maic:isProducedUsing to connect maic:Intersection individuals to maic:Direct_Material individuals if a direct material is suited for production and it is the least expensive choice.
+### This analysis is to be used in ConnectionMaterialRuleShapes.
+INSERT {
+    ?intersection maic:isProducedUsing ?direct_material_choice .
+}
+WHERE {
+  {
+    SELECT ?intersection (SAMPLE(?direct_material) AS ?direct_material_choice)
+    WHERE {
+      ?intersection a maic:Component_Intersection .
+      ?intersection maic:canBeProducedUsing ?direct_material .
+      ?direct_material maic:hasResourceCost ?direct_material_cost .
+      {
+        SELECT ?intersection (MIN(?direct_material_cost) AS ?direcet_material_cost_min)
+        WHERE {
+          ?intersection a maic:Component_Intersection .
+          ?intersection maic:canBeProducedUsing ?direct_material .
+          ?direct_material maic:hasResourceCost ?direct_material_cost .
+        }
+        GROUP BY ?intersection
+      }
+      FILTER (?direcet_material_cost_min = ?direct_material_cost) .
+    }
+    GROUP BY ?intersection
+  }
+}

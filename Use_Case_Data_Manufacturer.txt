@@ -1,0 +1,774 @@
+PREFIX maic:  <http://www.semanticweb.org/maic#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sh:    <http://www.w3.org/ns/shacl#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+
+
+
+##################################################################################################################
+### Manufacturer's Data
+##################################################################################################################
+### Section of Production Process
+maic:ERNEs_Weinmann_Production_Process a maic:Production_Process ;
+maic:consistOf maic:Factory_Crane ;
+maic:consistOf maic:Framing_Station ;
+maic:consistOf maic:Weinmann_Multi_Functional_Bridge ;
+maic:consistOf maic:Truck ;
+maic:consistOf maic:Construction_Crane ;
+.
+
+
+
+##################################################################################################################
+
+### Section of WorkStation Factory Crane
+maic:Factory_Crane a maic:WorkStation ;
+maic:consistOf maic:Transport_to_Framing_Station ;
+maic:consistOf maic:Transport_to_Weinmann_Multi_Functional_Bridge ;
+maic:consistOf maic:Rotate_on_Weinmann_Multi_Functional_Bridge ;
+maic:consistOf maic:Transport_to_H-Bock ;
+maic:hasCapabilityToProduceType maic:Timber_Frame_Wall_Panel ;
+maic:hasCapabilityToProduceType maic:Timber_Frame ;
+maic:hasCapabilityToProduceType maic:Structural_Element ;
+maic:hasCapabilityToProduceType maic:Sheeting_Element ;
+maic:hasCapability maic:Factory_Crane_Transportation ;
+.
+
+### Activities
+maic:Transport_to_Framing_Station a maic:Activity ;
+maic:cycleTime_average "300.0"^^xsd:float ;
+maic:hasActivityCost "15.0"^^xsd:float ;
+maic:consumes maic:Factory_Crane_Operator ;
+.
+
+maic:Transport_to_Weinmann_Multi_Functional_Bridge a maic:Activity ;
+maic:cycleTime_average "300.0"^^xsd:float ;
+maic:hasActivityCost "15.0"^^xsd:float ;
+maic:consumes maic:Factory_Crane_Operator ;
+.
+
+maic:Rotate_on_Weinmann_Multi_Functional_Bridge a maic:Activity ;
+maic:cycleTime_average "300.0"^^xsd:float ;
+maic:hasActivityCost "15.0"^^xsd:float ;
+maic:consumes maic:Factory_Crane_Operator ;
+.
+
+maic:Transport_to_H-Bock a maic:Activity ;
+maic:cycleTime_average "300.0"^^xsd:float ;
+maic:hasActivityCost "15.0"^^xsd:float ;
+maic:consumes maic:Factory_Crane_Operator ;
+.
+
+### Resources
+maic:Factory_Crane_Operator a maic:Direct_Labour ;
+maic:hasResourceCost "7.5"^^xsd:float ;
+maic:hasCapability maic:Road_Transportation ;
+.
+
+### Capabilities
+maic:Factory_Crane_Transportation a maic:Simple_Capability ;
+maic:hasAllowedItemShapeAndSize_min maic:Industry_Crane_Min_ShapeAndSize ;
+maic:hasAllowedItemShapeAndSize_max maic:Industry_Crane_Max_ShapeAndSize ;
+.
+
+### ShapeAndSizes
+maic:Industry_Crane_Min_ShapeAndSize a maic:BoxShape ;
+maic:mass "0.0"^^xsd:float ;
+.
+
+maic:Industry_Crane_Max_ShapeAndSize a maic:BoxShape ;
+maic:mass "10000.0"^^xsd:float ;
+.
+
+
+
+##################################################################################################################
+
+### Section of WorkStation Framing Station
+maic:Framing_Station a maic:WorkStation ;
+maic:consistOf maic:Screw_Timber_Frame ;
+maic:hasCapabilityToProduceType maic:Timber_Frame ;
+maic:hasCapability maic:Factory_Crane_Transportation ;
+.
+
+### Activities
+maic:Screw_Timber_Frame a maic:Activity ;
+maic:cycleTime_average "1200.0"^^xsd:float ;
+maic:hasActivityCost "60.0"^^xsd:float ;
+maic:consumes maic:Structural_OSB ;
+maic:consumes maic:Glulam_Timber ;
+maic:consumes maic:Screw ;
+maic:consumes maic:Screw_Driver ;
+maic:consumes maic:Framing_Construction_Worker ;
+.
+
+### Resources
+maic:Glulam_Timber a maic:Direct_Material ;
+maic:hasResourceCost "400.0"^^xsd:float ;
+maic:materialType "Glulam timber"^^xsd:string ;
+maic:fireMaterialClassification "RF3"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "true"^^xsd:boolean ;
+maic:hasType maic:Structural_Element ;
+maic:hasCapability maic:Framing ;
+.
+
+maic:Structural_OSB a maic:Direct_Material ;
+maic:hasResourceCost "50.0"^^xsd:float ;
+maic:materialType "Uncoated chip material"^^xsd:string ;
+maic:fireMaterialClassification "RF3"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "true"^^xsd:boolean ;
+maic:hasType maic:Structural_Element ;
+maic:hasCapability maic:Framing ;
+.
+
+
+maic:Screw a maic:Direct_Material ;
+maic:hasResourceCost "0.03"^^xsd:float ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasType maic:Connection_Element ;
+maic:hasCapability maic:Framing ;
+.
+
+maic:Screw_Driver a maic:Direct_Equipment ;
+maic:hasResourceCost "0.0"^^xsd:float ;
+maic:hasCapability maic:Framing ;
+.
+
+maic:Framing_Construction_Worker a maic:Direct_Labour ;
+maic:hasResourceCost "55.0"^^xsd:float ;
+maic:hasCapability maic:Framing ;
+.
+
+### Typologies
+maic:Timber_Frame a maic:Frame ;
+.
+
+### Capabilites
+maic:Framing a maic:Simple_Capability ;
+maic:tolerance "1.0"^^xsd:float ;
+maic:connectionMaterialIndex "3.0"^^xsd:float ;
+.
+
+
+
+##################################################################################################################
+
+### Section of WorkStation Weinmann Multi Functional Bridge
+maic:Weinmann_Multi_Functional_Bridge a maic:WorkStation ;
+maic:consistOf maic:Lay_Out_Panel ;
+maic:consistOf maic:Clamp_Panel ;
+maic:consistOf maic:Nail_Sheeting ;
+maic:consistOf maic:Trimm_Sheeting ;
+maic:hasCapabilityToProduceType maic:Timber_Frame_Wall_Panel ;
+maic:hasCapability maic:Weinmann_Panel_Assembly ;
+.
+
+### Activities
+maic:Lay_Out_Panel a maic:Activity ;
+maic:cycleTime_average "300.0"^^xsd:float ;
+maic:hasActivityCost: "15.0"^^xsd:float ;
+maic:consumes maic:Weinmann_Construction_Worker ;
+maic:consumes maic:Gypsum_Panel_2750-2500-15 ;
+maic:consumes maic:Gypsum_Panel_3000-2500-15 ;
+maic:consumes maic:Gypsum_Panel_3500-2500-15 ;
+maic:consumes maic:Gypsum_Panel_2750-1250-15 ;
+maic:consumes maic:Gypsum_Panel_3000-1250-15 ;
+maic:consumes maic:Gypsum_Panel_3500-1250-15 ;
+maic:consumes maic:Gypsum_Panel_2750-2500-18 ;
+maic:consumes maic:Gypsum_Panel_3000-2500-18 ;
+maic:consumes maic:Gypsum_Panel_3500-2500-18 ;
+maic:consumes maic:Gypsum_Panel_2750-1250-18 ;
+maic:consumes maic:Gypsum_Panel_3000-1250-18 ;
+maic:consumes maic:Gypsum_Panel_3500-1250-18 ;
+maic:consumes maic:OSB_Panel_2000-2500-15 ;
+maic:consumes maic:OSB_Panel_3500-2500-15 ;
+maic:consumes maic:OSB_Panel_9000-2800-25 ;
+maic:consumes maic:OSB_Panel_12000-2800-25 ;
+maic:consumes maic:OSB_Panel_15000-2800-25 ;
+maic:consumes maic:Fiber_Insulation_Wool ;
+.
+
+maic:Clamp_Panel a maic:Activity ;
+maic:cycleTime_average "300.0"^^xsd:float ;
+maic:hasActivityCost: "15.0"^^xsd:float ;
+maic:consumes maic:Weinmann_Construction_Worker ;
+.
+
+maic:Nail_Sheeting a maic:Activity ;
+maic:cycleTime_average "300.0"^^xsd:float ;
+maic:hasActivityCost: "45.0"^^xsd:float ;
+maic:consumes maic:Weinmann_Operator ;
+maic:consumes maic:Weinmann_Fastening_Unit ;
+maic:consumes maic:Weinmann_Nail ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+.
+
+maic:Trimm_Sheeting a maic:Activity ;
+maic:cycleTime_average "300.0"^^xsd:float ;
+maic:hasActivityCost: "45.0"^^xsd:float ;
+maic:consumes maic:Weinmann_Operator ;
+maic:consumes maic:Weinmann_Saw ;
+maic:consumes maic:Weinmann_Trimmer ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+### Resources
+maic:Weinmann_Operator a maic:Direct_Labour ;
+maic:hasResourceCost "17.5"^^xsd:float ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Weinmann_Construction_Worker a maic:Direct_Labour ;
+maic:hasResourceCost "7.5"^^xsd:float ;
+.
+
+maic:Weinmann_Fastening_Unit a maic:Direct_Equipment ;
+maic:hasResourceCost "0.0"^^xsd:float ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+.
+
+maic:Weinmann_Saw a maic:Direct_Equipment ;
+maic:hasResourceCost "0.0"^^xsd:float ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+.
+
+maic:Weinmann_Trimmer a maic:Direct_Equipment ;
+maic:hasResourceCost "0.0"^^xsd:float ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Weinmann_Nail a maic:Direct_Material ;
+maic:hasResourceCost "0.01"^^xsd:float ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:hasCount "198"^^xsd:int ;
+maic:hasType maic:Connection_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+.
+
+maic:Gypsum_Panel_2750-2500-15 a maic:Direct_Material ;
+maic:hasResourceCost "67.5"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "4"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_2750-2500-15_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Gypsum_Panel_3000-2500-15 a maic:Direct_Material ;
+maic:hasResourceCost "75.0"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "4"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_3000-2500-15_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Gypsum_Panel_3500-2500-15 a maic:Direct_Material ;
+maic:hasResourceCost "87.5"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "4"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_3500-2500-15_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Gypsum_Panel_2750-1250-15 a maic:Direct_Material ;
+maic:hasResourceCost "34.5"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "4"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_2750-1250-15_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Gypsum_Panel_3000-1250-15 a maic:Direct_Material ;
+maic:hasResourceCost "37.5"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "4"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_3000-1250-15_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Gypsum_Panel_3500-1250-15 a maic:Direct_Material ;
+maic:hasResourceCost "43.75"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "4"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_3500-1250-15_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Gypsum_Panel_2750-2500-18 a maic:Direct_Material ;
+maic:hasResourceCost "82.5"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_2750-2500-18_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Gypsum_Panel_3000-2500-18 a maic:Direct_Material ;
+maic:hasResourceCost "90.0"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_3000-2500-18_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Gypsum_Panel_3500-2500-18 a maic:Direct_Material ;
+maic:hasResourceCost "105.0"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_3500-2500-18_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Gypsum_Panel_2750-1250-18 a maic:Direct_Material ;
+maic:hasResourceCost "41.25"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_2750-1250-18_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+
+maic:Gypsum_Panel_3000-1250-18 a maic:Direct_Material ;
+maic:hasResourceCost "45.0"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_3000-1250-18_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Gypsum_Panel_3500-1250-18 a maic:Direct_Material ;
+maic:hasResourceCost "52.50"^^xsd:float ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:Gypsum_Panel_3500-1250-18_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:OSB_Panel_2000-2500-15 a maic:Direct_Material ;
+maic:hasResourceCost "30.0"^^xsd:float ;
+maic:materialType "Uncoated chip material"^^xsd:string ;
+maic:fireMaterialClassification "RF3"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:OSB_Panel_2000-2500-15_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:OSB_Panel_3500-2500-15 a maic:Direct_Material ;
+maic:hasResourceCost "52.50"^^xsd:float ;
+maic:materialType "Uncoated chip material"^^xsd:string ;
+maic:fireMaterialClassification "RF3"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:OSB_Panel_3500-2500-15_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:OSB_Panel_9000-2800-25 a maic:Direct_Material ;
+maic:hasResourceCost "201.60"^^xsd:float ;
+maic:materialType "Uncoated chip material"^^xsd:string ;
+maic:fireMaterialClassification "RF3"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:OSB_Panel_9000-2800-25_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:OSB_Panel_12000-2800-25 a maic:Direct_Material ;
+maic:hasResourceCost "268.80"^^xsd:float ;
+maic:materialType "Uncoated chip material"^^xsd:string ;
+maic:fireMaterialClassification "RF3"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:OSB_Panel_12000-2800-25_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:OSB_Panel_15000-2800-25 a maic:Direct_Material ;
+maic:hasResourceCost "336.0"^^xsd:float ;
+maic:materialType "Uncoated chip material"^^xsd:string ;
+maic:fireMaterialClassification "RF3"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "false"^^xsd:boolean ;
+maic:hasShapeAndSize maic:OSB_Panel_15000-2800-25_ShapeAndSize ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasCapability maic:Weinmann_Sheeting_Nailing ;
+maic:hasCapability maic:Weinmann_Sheeting_Sawing ;
+maic:hasCapability maic:Weinmann_Sheeting_Trimming ;
+.
+
+maic:Fiber_Insulation_Wool a maic:Direct_Material ;
+maic:hasResourceCost "20.0"^^xsd:float ;
+maic:materialType "Mineral wool"^^xsd:string ;
+maic:fireMaterialClassification "none"^^xsd:string ;
+maic:hasCount "1000"^^xsd:int ;
+maic:hasAnyShapeAndSize "true"^^xsd:boolean ;
+maic:hasType maic:Insulation_Element ;
+.
+
+### Typologies
+maic:Timber_Frame_Wall_Panel a maic:Panel ;
+.
+
+maic:Structural_Element a maic:Element ;
+.
+
+maic:Sheeting_Element a maic:Element ;
+.
+
+maic:Insulation_Element a maic:Element ;
+.
+
+maic:Connection_Element a maic:Element ;
+.
+
+### Capabilities
+maic:Weinmann_Panel_Assembly a maic:Combined_Capability ;
+maic:tolerance "1.0"^^xsd:float ;
+maic:isComposedOf maic:Weinmann_Sheeting_Nailing ;
+maic:isComposedOf maic:Weinmann_Sheeting_Sawing ;
+maic:isComposedOf maic:Weinmann_Sheeting_Trimming ;
+maic:hasAllowedItemShapeAndSize_min maic:Weinmann_Min_ShapeAndSize ;
+maic:hasAllowedItemShapeAndSize_max maic:Weinmann_Max_ShapeAndSize ;
+.
+
+maic:Weinmann_Sheeting_Nailing a maic:Simple_Capability ;
+maic:connectionMaterialIndex "3.0"^^xsd:float ;
+.
+
+maic:Weinmann_Sheeting_Sawing a maic:Simple_Capability ;
+maic:tolerance "1.0"^^xsd:float ;
+maic:hasAllowedNegativeItemShapeAndSize_min maic:Weinmann_Sawing_Min_ShapeAndSize ;
+maic:hasAllowedNegativeItemShapeAndSize_max maic:Weinmann_Sawing_Max_ShapeAndSize ;
+.
+
+maic:Weinmann_Sheeting_Trimming a maic:Simple_Capability ;
+maic:tolerance "1.0"^^xsd:float ;
+maic:hasAllowedNegativeItemShapeAndSize_min maic:Weinmann_Trimming_Min_ShapeAndSize ;
+maic:hasAllowedNegativeItemShapeAndSize_max maic:Weinmann_Trimming_Max_ShapeAndSize ;
+.
+
+### ShapeAndSizes
+maic:Weinmann_Min_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "1.0"^^xsd:float ;
+maic:dimension_y "1.0"^^xsd:float ;
+maic:dimension_z "1.0"^^xsd:float ;
+maic:mass "0.0"^^xsd:float ;
+.
+
+maic:Weinmann_Max_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "45000.0"^^xsd:float ;
+maic:dimension_y "4000.0"^^xsd:float ;
+maic:dimension_z "400.0"^^xsd:float ;
+maic:mass "20000.0"^^xsd:float ;
+.
+
+maic:Weinmann_Sawing_Min_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "300.0"^^xsd:float ;
+maic:dimension_y "300.0"^^xsd:float ;
+maic:dimension_z "1.0"^^xsd:float ;
+.
+
+maic:Weinmann_Sawing_Max_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "45000.0"^^xsd:float ;
+maic:dimension_y "4000.0"^^xsd:float ;
+maic:dimension_z "60.0"^^xsd:float ;
+.
+
+maic:Weinmann_Trimming_Min_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "16.0"^^xsd:float ;
+maic:dimension_y "16.0"^^xsd:float ;
+maic:dimension_z "1.0"^^xsd:float ;
+.
+
+maic:Weinmann_Trimming_Max_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "45000.0"^^xsd:float ;
+maic:dimension_y "4000.0"^^xsd:float ;
+maic:dimension_z "60.0"^^xsd:float ;
+.
+
+
+maic:Gypsum_Panel_2750-2500-15_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "2750"^^xsd:float ;
+maic:dimension_y "2500"^^xsd:float ;
+maic:dimension_z "15"^^xsd:float ;
+maic:mass "123.75"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_3000-2500-15_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "3000"^^xsd:float ;
+maic:dimension_y "2500"^^xsd:float ;
+maic:dimension_z "15"^^xsd:float ;
+maic:mass "135.0"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_3500-2500-15_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "3500"^^xsd:float ;
+maic:dimension_y "2500"^^xsd:float ;
+maic:dimension_z "15"^^xsd:float ;
+maic:mass "157.5"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_2750-1250-15_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "2750"^^xsd:float ;
+maic:dimension_y "1250"^^xsd:float ;
+maic:dimension_z "15"^^xsd:float ;
+maic:mass "123.75"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_3000-1250-15_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "3000"^^xsd:float ;
+maic:dimension_y "1250"^^xsd:float ;
+maic:dimension_z "15"^^xsd:float ;
+maic:mass "67.5"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_3500-1250-15_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "3500"^^xsd:float ;
+maic:dimension_y "1250"^^xsd:float ;
+maic:dimension_z "15"^^xsd:float ;
+maic:mass "78.75"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_2750-2500-18_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "2750"^^xsd:float ;
+maic:dimension_y "2500"^^xsd:float ;
+maic:dimension_z "18"^^xsd:float ;
+maic:mass "148.5"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_3000-2500-18_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "3000"^^xsd:float ;
+maic:dimension_y "2500"^^xsd:float ;
+maic:dimension_z "18"^^xsd:float ;
+maic:mass "162.0"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_3500-2500-18_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "3500"^^xsd:float ;
+maic:dimension_y "2500"^^xsd:float ;
+maic:dimension_z "18"^^xsd:float ;
+maic:mass "189.0"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_2750-1250-18_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "2750"^^xsd:float ;
+maic:dimension_y "1250"^^xsd:float ;
+maic:dimension_z "18"^^xsd:float ;
+maic:mass "74.25"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_3000-1250-18_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "3000"^^xsd:float ;
+maic:dimension_y "1250"^^xsd:float ;
+maic:dimension_z "18"^^xsd:float ;
+maic:mass "81.0"^^xsd:float ;
+.
+
+maic:Gypsum_Panel_3500-1250-18_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "3500"^^xsd:float ;
+maic:dimension_y "1250"^^xsd:float ;
+maic:dimension_z "18"^^xsd:float ;
+maic:mass "94.5"^^xsd:float ;
+.
+
+maic:OSB_Panel_2000-2500-15_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "2000"^^xsd:float ;
+maic:dimension_y "2500"^^xsd:float ;
+maic:dimension_z "15"^^xsd:float ;
+maic:mass "37.5"^^xsd:float ;
+.
+
+maic:OSB_Panel_3500-2500-15_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "3500"^^xsd:float ;
+maic:dimension_y "2500"^^xsd:float ;
+maic:dimension_z "15"^^xsd:float ;
+maic:mass "65.625"^^xsd:float ;
+.
+
+maic:OSB_Panel_9000-2800-25_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "9000"^^xsd:float ;
+maic:dimension_y "2800"^^xsd:float ;
+maic:dimension_z "25"^^xsd:float ;
+maic:mass "315.0"^^xsd:float ;
+.
+
+maic:OSB_Panel_12000-2800-25_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "1200"^^xsd:float ;
+maic:dimension_y "2800"^^xsd:float ;
+maic:dimension_z "25"^^xsd:float ;
+maic:mass "420.0"^^xsd:float ;
+.
+
+maic:OSB_Panel_15000-2800-25_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "15000"^^xsd:float ;
+maic:dimension_y "2800"^^xsd:float ;
+maic:dimension_z "25"^^xsd:float ;
+maic:mass "525.0"^^xsd:float ;
+.
+
+##################################################################################################################
+
+### Section of WorkStation Truck
+maic:Truck a maic:WorkStation ;
+maic:consistOf maic:Transport_to_Construction_Crane ;
+maic:hasCapabilityToProduceType maic:Timber_Frame_Wall_Panel ;
+maic:hasCapability maic:Road_Transportation ;
+.
+
+### Activities
+maic:Transport_to_Construction_Crane a maic:Activity ;
+maic:cycleTime_average "7200.0"^^xsd:float ;
+maic:hasActivityCost: "200.0"^^xsd:float ;
+maic:consumes maic:Truck_Driver ;
+.
+
+### Resources
+maic:Truck_Driver a maic:Direct_Labour ;
+maic:hasResourceCost "200.0"^^xsd:float ;
+maic:hasCapability maic:Road_Transportation ;
+.
+
+### Capabilities
+maic:Road_Transportation a maic:Simple_Capability ;
+maic:hasAllowedItemShapeAndSize_min maic:Truck_Min_ShapeAndSize ;
+maic:hasAllowedItemShapeAndSize_max maic:Truck_Max_ShapeAndSize ;
+.
+
+### ShapeAndSizes
+maic:Truck_Min_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "0.0"^^xsd:float ;
+maic:dimension_y "0.0"^^xsd:float ;
+maic:dimension_z "0.0"^^xsd:float ;
+maic:mass "0.0"^^xsd:float ;
+.
+
+maic:Truck_Max_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "9200.0"^^xsd:float ;
+maic:dimension_y "3000.0"^^xsd:float ;
+maic:dimension_z "2550.0"^^xsd:float ;
+maic:mass "20000.0"^^xsd:float ;
+.
+
+
+
+##################################################################################################################
+
+### Section of WorkStation Construction Crane
+maic:Construction_Crane a maic:WorkStation ;
+maic:consistOf maic:Transport_to_Final_Position ;
+maic:hasCapabilityToProduceType maic:Timber_Frame_Wall_Panel ;
+maic:hasCapability maic:On_Site_Assembly ;
+.
+
+### Actitivies
+maic:Transport_to_Final_Position a maic:Activity ;
+maic:cycleTime_average "7200.0"^^xsd:float ;
+maic:hasActivityCost: "10.0"^^xsd:float ;
+maic:consumes maic:Assembly_Construction_Worker ;
+maic:consumes maic:Construction_Crane_Operator ;
+.
+
+### Ressources
+maic:Assembly_Construction_Worker a maic:Direct_Labour ;
+maic:hasResourceCost "90.0"^^xsd:float ;
+maic:hasCapability maic:On_Site_Assembly ;
+.
+
+maic:Construction_Crane_Operator a maic:Direct_Labour ;
+maic:hasResourceCost "30.0"^^xsd:float ;
+maic:hasCapability maic:On_Site_Assembly ;
+.
+
+### Capabilities
+maic:On_Site_Assembly a maic:Simple_Capability ;
+maic:hasAllowedItemShapeAndSize_min maic:Construction_Crane_Min_ShapeAndSize ;
+maic:hasAllowedItemShapeAndSize_max maic:Construction_Crane_Max_ShapeAndSize ;
+.
+
+### ShapeAndSizes
+maic:Construction_Crane_Min_ShapeAndSize a maic:BoxShape;
+maic:mass "0.0"^^xsd:float ;
+.
+
+maic:Construction_Crane_Max_ShapeAndSize a maic:BoxShape;
+maic:mass "3000.0"^^xsd:float ;
+.

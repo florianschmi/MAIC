@@ -1,0 +1,31 @@
+
+
+
+##################################################################################################################
+### Designer's Data
+##################################################################################################################
+### Section of Constants
+maic:Outer_Wall_Panel_Project_Constants a maic:Constant;
+maic:leadTime "20000.0"^^xsd:float;
+.
+
+
+
+##################################################################################################################
+### Section of Product Outer Wall Panel Project
+maic:Bathroom_Pod_Project a maic:Product ;
+maic:consistOfComponent maic:Bathroom_Pod ;
+.
+
+
+
+##################################################################################################################
+### Section of Component Bathroom Pod
+### Components
+maic:Bathroom_Pod a maic:Component ;
+maic:hasType maic:Bathroom_Module ;
+.
+
+### Typologies
+maic:Bathroom_Module a maic:Module ;
+.

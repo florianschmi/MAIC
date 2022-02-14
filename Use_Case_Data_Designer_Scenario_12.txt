@@ -1,0 +1,2379 @@
+
+
+
+##################################################################################################################
+### Designer's Data
+##################################################################################################################
+### Section of Constants
+maic:Outer_Wall_Panel_Project_Constants a maic:Constant;
+maic:leadTime "17000.0"^^xsd:float;
+.
+
+
+
+##################################################################################################################
+### Section of Product Outer Wall Panel Project
+maic:Outer_Wall_Panel_Project a maic:Product ;
+maic:consistOfComponent maic:Outer_Wall_Panel ;
+maic:consistOfComponent maic:Stud_1 ;
+maic:consistOfComponent maic:Stud_2 ;
+maic:consistOfComponent maic:Stud_3 ;
+maic:consistOfComponent maic:Stud_4 ;
+maic:consistOfComponent maic:Stud_5 ;
+maic:consistOfComponent maic:Stud_6 ;
+maic:consistOfComponent maic:Stud_7 ;
+maic:consistOfComponent maic:Stud_8 ;
+maic:consistOfComponent maic:Stud_9 ;
+maic:consistOfComponent maic:Stud_10 ;
+maic:consistOfComponent maic:Stud_11 ;
+maic:consistOfComponent maic:Stud_12 ;
+maic:consistOfComponent maic:Stud_13 ;
+maic:consistOfComponent maic:Stud_14_Upper_Part ;
+maic:consistOfComponent maic:Stud_14_Lower_Part ;
+maic:consistOfComponent maic:Stud_15_Upper_Part ;
+maic:consistOfComponent maic:Stud_15_Lower_Part ;
+maic:consistOfComponent maic:Stud_16_Upper_Part ;
+maic:consistOfComponent maic:Stud_16_Lower_Part ;
+maic:consistOfComponent maic:Stud_17 ;
+maic:consistOfComponent maic:Stud_18 ;
+maic:consistOfComponent maic:Stud_19 ;
+maic:consistOfComponent maic:Stud_20 ;
+maic:consistOfComponent maic:Stud_21 ;
+maic:consistOfComponent maic:Stud_22 ;
+maic:consistOfComponent maic:Stud_23_Upper_Part ;
+maic:consistOfComponent maic:Stud_23_Lower_Part ;
+maic:consistOfComponent maic:Stud_24_Upper_Part ;
+maic:consistOfComponent maic:Stud_24_Lower_Part ;
+maic:consistOfComponent maic:Stud_25_Upper_Part ;
+maic:consistOfComponent maic:Stud_25_Lower_Part ;
+maic:consistOfComponent maic:Stud_26 ;
+maic:consistOfComponent maic:Stud_27 ;
+maic:consistOfComponent maic:Stud_28 ;
+maic:consistOfComponent maic:Stud_29 ;
+maic:consistOfComponent maic:Stud_30 ;
+maic:consistOfComponent maic:Stud_30 ;
+maic:consistOfComponent maic:Stud_31 ;
+maic:consistOfComponent maic:Stud_32 ;
+maic:consistOfComponent maic:Beam_1 ;
+maic:consistOfComponent maic:Beam_2 ;
+maic:consistOfComponent maic:Beam_3 ;
+maic:consistOfComponent maic:Beam_4 ;
+maic:consistOfComponent maic:Beam_5 ;
+maic:consistOfComponent maic:Beam_6 ;
+maic:consistOfComponent maic:Insulation_1 ;
+maic:consistOfComponent maic:Insulation_2 ;
+maic:consistOfComponent maic:Insulation_3 ;
+maic:consistOfComponent maic:Insulation_4 ;
+maic:consistOfComponent maic:Insulation_5 ;
+maic:consistOfComponent maic:Insulation_6 ;
+maic:consistOfComponent maic:Insulation_7 ;
+maic:consistOfComponent maic:Insulation_8 ;
+maic:consistOfComponent maic:Insulation_9 ;
+maic:consistOfComponent maic:Insulation_10 ;
+maic:consistOfComponent maic:Insulation_11 ;
+maic:consistOfComponent maic:Insulation_12 ;
+maic:consistOfComponent maic:Insulation_13 ;
+maic:consistOfComponent maic:Insulation_14 ;
+maic:consistOfComponent maic:Insulation_15 ;
+maic:consistOfComponent maic:Insulation_16 ;
+maic:consistOfComponent maic:Exterior_Sheeting_1 ;
+maic:consistOfComponent maic:Exterior_Sheeting_2 ;
+maic:consistOfComponent maic:Exterior_Sheeting_3 ;
+maic:consistOfComponent maic:Exterior_Sheeting_4 ;
+maic:consistOfComponent maic:Interior_Sheeting_1 ;
+maic:consistOfComponent maic:Interior_Sheeting_2 ;
+maic:consistOfComponent maic:Interior_Sheeting_3 ;
+maic:consistOfComponent maic:Interior_Sheeting_4 ;
+maic:consistOfIntersection maic:Intersection_Beam_1_Beam_2;
+maic:consistOfIntersection maic:Intersection_Beam_2_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_1_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_2_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_3_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_4_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_5_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_6_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_7_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_8_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_9_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_10_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_11_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_12_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_13_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_14_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_15_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_16_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_17_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_18_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_19_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_20_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_21_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_22_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_23_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_24_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_25_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_26_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_27_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_28_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_29_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_30_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_31_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_32_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_33_Beam_3;
+maic:consistOfIntersection maic:Intersection_Stud_1_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_2_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_3_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_4_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_5_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_6_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_7_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_8_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_9_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_10_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_11_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_12_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_13_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_14_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_15_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_16_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_17_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_18_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_19_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_20_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_21_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_22_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_23_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_24_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_25_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_26_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_27_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_28_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_29_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_30_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_31_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_32_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_33_Beam_4;
+maic:consistOfIntersection maic:Intersection_Stud_1_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_2_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_3_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_4_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_5_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_6_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_7_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_8_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_9_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_10_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_11_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_12_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_13_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_14_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_15_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_16_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_17_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_18_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_19_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_20_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_21_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_22_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_23_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_24_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_25_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_26_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_27_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_28_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_29_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_30_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_31_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_32_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_33_Beam_5;
+maic:consistOfIntersection maic:Intersection_Stud_1_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_2_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_3_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_4_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_5_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_6_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_7_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_8_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_9_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_10_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_11_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_12_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_13_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_14_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_15_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_16_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_17_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_18_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_19_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_20_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_21_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_22_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_23_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_24_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_25_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_26_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_27_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_28_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_29_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_30_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_31_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_32_Beam_6;
+maic:consistOfIntersection maic:Intersection_Stud_33_Beam_6;
+maic:consistOfIntersection maic:Intersection_Sheeting_1_Stud_1 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_1_Stud_2 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_1_Stud_3 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_1_Stud_4 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_2_Stud_5 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_2_Stud_6 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_2_Stud_7 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_2_Stud_8 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_2_Stud_9 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_3_Stud_10 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_3_Stud_11 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_3_Stud_12 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_3_Stud_13 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_3_Stud_14 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_3_Stud_15 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_3_Stud_16 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_3_Stud_17 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_3_Stud_18 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_3_Stud_19 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_20 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_21 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_22 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_23 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_24 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_25 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_26 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_27 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_28 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_29 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_30 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_31 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_32 ;
+maic:consistOfIntersection maic:Intersection_Sheeting_4_Stud_33 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_1_Stud_1 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_1_Stud_2 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_1_Stud_3 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_1_Stud_4 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_2_Stud_5 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_2_Stud_6 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_2_Stud_7 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_2_Stud_8 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_2_Stud_9 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_3_Stud_10 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_3_Stud_11 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_3_Stud_12 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_3_Stud_13 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_3_Stud_14 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_3_Stud_15 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_3_Stud_16 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_3_Stud_17 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_3_Stud_18 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_3_Stud_19 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_20 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_21 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_22 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_23 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_24 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_25 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_26 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_27 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_28 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_29 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_30 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_31 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_32 ;
+maic:consistOfIntersection maic:Intersection_Interior_Sheeting_4_Stud_33 ;
+maic:consistOfIntersection maic:Opening_1;
+maic:consistOfIntersection maic:Opening_2;
+.
+
+
+
+##################################################################################################################
+### Section of Component Outer Wall Panel
+### Components
+maic:Outer_Wall_Panel a maic:Component ;
+maic:hasType maic:Timber_Frame_Wall_Panel ;
+maic:hasShapeAndSize maic:Outer_Wall_Panel_ShapeAndSize ;
+maic:hasPerformance maic:Outer_Wall_Panel_Acoustic-Rating ;
+maic:hasPerformance maic:Outer_Wall_Panel_Fire-Rating ;
+maic:hasPerformance maic:Outer_Wall_Thermal_Transmittance ;
+maic:hasPerformance maic:Outer_Wall_Load-bearing_Capacity ;
+maic:has maic:Opening_1 ;
+maic:has maic:Opening_2 ;
+.
+
+### ShapeAndSizes
+maic:Outer_Wall_Panel_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "8421.0"^^xsd:float ;
+maic:dimension_y "2676.0"^^xsd:float ;
+maic:dimension_z "258.0"^^xsd:float ;
+maic:mass "2629.9"^^xsd:float ;
+.
+
+### Performances
+maic:Outer_Wall_Panel_Acoustic-Rating a maic:Acoustic-Rating ;
+maic:apparentSoundInsulationIndex "30.0"^^xsd:float ;
+.
+
+maic:Outer_Wall_Panel_Fire-Rating a maic:Fire-Rating ;
+maic:fireSectionClassification "EI30"^^xsd:string ;
+.
+
+maic:Outer_Wall_Thermal_Transmittance a maic:Thermal_Transmittance ;
+maic:u-value "0.2"^^xsd:float ;
+.
+
+maic:Outer_Wall_Load-bearing_Capacity a maic:Load-bearing_Capacity ;
+maic:load-bearingCapacity "1500.0"^^xsd:float
+.
+
+
+
+##################################################################################################################
+### Section of Timber Frame Components
+### Components
+maic:Stud_1 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_1_Beam_3;
+maic:forms maic:Intersection_Stud_1_Beam_4;
+maic:forms maic:Intersection_Stud_1_Beam_5;
+maic:forms maic:Intersection_Stud_1_Beam_6;
+maic:forms maic:Intersection_Sheeting_1_Stud_1 ;
+maic:forms maic:Intersection_Interior_Sheeting_1_Stud_1 ;
+.
+
+maic:Stud_2 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_2_Beam_3;
+maic:forms maic:Intersection_Stud_2_Beam_4;
+maic:forms maic:Intersection_Stud_2_Beam_5;
+maic:forms maic:Intersection_Stud_2_Beam_6;
+maic:forms maic:Intersection_Sheeting_1_Stud_2 ;
+maic:forms maic:Intersection_Interior_Sheeting_1_Stud_2 ;
+.
+
+maic:Stud_3 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_3_Beam_3;
+maic:forms maic:Intersection_Stud_3_Beam_4;
+maic:forms maic:Intersection_Stud_3_Beam_5;
+maic:forms maic:Intersection_Stud_3_Beam_6;
+maic:forms maic:Intersection_Sheeting_1_Stud_3 ;
+maic:forms maic:Intersection_Interior_Sheeting_1_Stud_3 ;
+.
+
+maic:Stud_4 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_4_Beam_3;
+maic:forms maic:Intersection_Stud_4_Beam_4;
+maic:forms maic:Intersection_Stud_4_Beam_5;
+maic:forms maic:Intersection_Stud_4_Beam_6;
+maic:forms maic:Intersection_Sheeting_1_Stud_4 ;
+maic:forms maic:Intersection_Interior_Sheeting_1_Stud_4 ;
+.
+
+maic:Stud_5 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_5_Beam_3;
+maic:forms maic:Intersection_Stud_5_Beam_4;
+maic:forms maic:Intersection_Stud_5_Beam_5;
+maic:forms maic:Intersection_Stud_5_Beam_6;
+maic:forms maic:Intersection_Sheeting_2_Stud_5 ;
+maic:forms maic:Intersection_Interior_Sheeting_2_Stud_5 ;
+.
+
+maic:Stud_6 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_6_Beam_3;
+maic:forms maic:Intersection_Stud_6_Beam_4;
+maic:forms maic:Intersection_Stud_6_Beam_5;
+maic:forms maic:Intersection_Stud_6_Beam_6;
+maic:forms maic:Intersection_Sheeting_2_Stud_6 ;
+maic:forms maic:Intersection_Interior_Sheeting_2_Stud_6 ;
+.
+
+maic:Stud_7 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_7_Beam_3;
+maic:forms maic:Intersection_Stud_7_Beam_4;
+maic:forms maic:Intersection_Stud_7_Beam_5;
+maic:forms maic:Intersection_Stud_7_Beam_6;
+maic:forms maic:Intersection_Sheeting_2_Stud_7 ;
+maic:forms maic:Intersection_Interior_Sheeting_2_Stud_7 ;
+.
+
+maic:Stud_8 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_8_Beam_3;
+maic:forms maic:Intersection_Stud_8_Beam_4;
+maic:forms maic:Intersection_Stud_8_Beam_5;
+maic:forms maic:Intersection_Stud_8_Beam_6;
+maic:forms maic:Intersection_Sheeting_2_Stud_8 ;
+maic:forms maic:Intersection_Interior_Sheeting_2_Stud_8 ;
+.
+
+maic:Stud_9 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_9_Beam_3;
+maic:forms maic:Intersection_Stud_9_Beam_4;
+maic:forms maic:Intersection_Stud_9_Beam_5;
+maic:forms maic:Intersection_Stud_9_Beam_6;
+maic:forms maic:Intersection_Sheeting_2_Stud_9 ;
+maic:forms maic:Intersection_Interior_Sheeting_2_Stud_9 ;
+.
+
+maic:Stud_10 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_10_Beam_3;
+maic:forms maic:Intersection_Stud_10_Beam_4;
+maic:forms maic:Intersection_Stud_10_Beam_5;
+maic:forms maic:Intersection_Stud_10_Beam_6;
+maic:forms maic:Intersection_Sheeting_3_Stud_10 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_10 ;
+.
+
+maic:Stud_11 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_11_Beam_3;
+maic:forms maic:Intersection_Stud_11_Beam_4;
+maic:forms maic:Intersection_Stud_11_Beam_5;
+maic:forms maic:Intersection_Stud_11_Beam_6;
+maic:forms maic:Intersection_Sheeting_3_Stud_11 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_11 ;
+.
+
+maic:Stud_12 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_12_Beam_3;
+maic:forms maic:Intersection_Stud_12_Beam_4;
+maic:forms maic:Intersection_Stud_12_Beam_5;
+maic:forms maic:Intersection_Stud_12_Beam_6;
+maic:forms maic:Intersection_Sheeting_3_Stud_12 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_12 ;
+.
+
+maic:Stud_13 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_13_Beam_3;
+maic:forms maic:Intersection_Stud_13_Beam_4;
+maic:forms maic:Intersection_Stud_13_Beam_5;
+maic:forms maic:Intersection_Stud_13_Beam_6;
+maic:forms maic:Intersection_Sheeting_3_Stud_13 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_13 ;
+.
+
+maic:Stud_14_Upper_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Upper_Part_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_14_Beam_3;
+maic:forms maic:Intersection_Stud_14_Beam_4;
+maic:forms maic:Intersection_Sheeting_3_Stud_14 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_14 ;
+.
+
+maic:Stud_14_Lower_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Lower_Part_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_14_Beam_5;
+maic:forms maic:Intersection_Stud_14_Beam_6;
+maic:forms maic:Intersection_Sheeting_3_Stud_14 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_14 ;
+.
+
+maic:Stud_15_Upper_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Upper_Part_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_15_Beam_3;
+maic:forms maic:Intersection_Stud_15_Beam_4;
+maic:forms maic:Intersection_Sheeting_3_Stud_15 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_15 ;
+.
+
+maic:Stud_15_Lower_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Lower_Part_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_15_Beam_5;
+maic:forms maic:Intersection_Stud_15_Beam_6;
+maic:forms maic:Intersection_Sheeting_3_Stud_15 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_15 ;
+.
+
+maic:Stud_16_Upper_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Upper_Part_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_16_Beam_3;
+maic:forms maic:Intersection_Stud_16_Beam_4;
+maic:forms maic:Intersection_Sheeting_3_Stud_16 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_16 ;
+.
+
+maic:Stud_16_Lower_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Lower_Part_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_16_Beam_5;
+maic:forms maic:Intersection_Stud_16_Beam_6;
+maic:forms maic:Intersection_Sheeting_3_Stud_16 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_16 ;
+.
+
+maic:Stud_17 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_17_Beam_3;
+maic:forms maic:Intersection_Stud_17_Beam_4;
+maic:forms maic:Intersection_Stud_17_Beam_5;
+maic:forms maic:Intersection_Stud_17_Beam_6;
+maic:forms maic:Intersection_Sheeting_3_Stud_17 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_17 ;
+.
+
+maic:Stud_18 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_18_Beam_3;
+maic:forms maic:Intersection_Stud_18_Beam_4;
+maic:forms maic:Intersection_Stud_18_Beam_5;
+maic:forms maic:Intersection_Stud_18_Beam_6;
+maic:forms maic:Intersection_Sheeting_3_Stud_18 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_18 ;
+.
+
+maic:Stud_19 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_19_Beam_3;
+maic:forms maic:Intersection_Stud_19_Beam_4;
+maic:forms maic:Intersection_Stud_19_Beam_5;
+maic:forms maic:Intersection_Stud_19_Beam_6;
+maic:forms maic:Intersection_Sheeting_3_Stud_19 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_19 ;
+.
+
+maic:Stud_20 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_20_Beam_3;
+maic:forms maic:Intersection_Stud_20_Beam_4;
+maic:forms maic:Intersection_Stud_20_Beam_5;
+maic:forms maic:Intersection_Stud_20_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_20 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_20 ;
+.
+
+maic:Stud_21 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_21_Beam_3;
+maic:forms maic:Intersection_Stud_21_Beam_4;
+maic:forms maic:Intersection_Stud_21_Beam_5;
+maic:forms maic:Intersection_Stud_21_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_21 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_21 ;
+.
+
+maic:Stud_22 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_22_Beam_3;
+maic:forms maic:Intersection_Stud_22_Beam_4;
+maic:forms maic:Intersection_Stud_22_Beam_5;
+maic:forms maic:Intersection_Stud_22_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_22 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_22 ;
+.
+
+maic:Stud_23_Upper_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Upper_Part_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_23_Beam_3;
+maic:forms maic:Intersection_Stud_23_Beam_4;
+maic:forms maic:Intersection_Sheeting_4_Stud_23 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_23 ;
+.
+
+maic:Stud_23_Lower_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Lower_Part_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_23_Beam_5;
+maic:forms maic:Intersection_Stud_23_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_23 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_23 ;
+.
+
+
+maic:Stud_24_Upper_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Upper_Part_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_24_Beam_3;
+maic:forms maic:Intersection_Stud_24_Beam_4;
+maic:forms maic:Intersection_Sheeting_4_Stud_24 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_24 ;
+.
+
+maic:Stud_24_Lower_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Lower_Part_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_24_Beam_5;
+maic:forms maic:Intersection_Stud_24_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_24 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_24 ;
+.
+
+maic:Stud_25_Upper_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Upper_Part_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_25_Beam_3;
+maic:forms maic:Intersection_Stud_25_Beam_4;
+maic:forms maic:Intersection_Sheeting_4_Stud_25 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_25 ;
+.
+
+maic:Stud_25_Lower_Part a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_Lower_Part_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_25_Beam_5;
+maic:forms maic:Intersection_Stud_25_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_25 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_25 ;
+.
+
+maic:Stud_26 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_26_Beam_3;
+maic:forms maic:Intersection_Stud_26_Beam_4;
+maic:forms maic:Intersection_Stud_26_Beam_5;
+maic:forms maic:Intersection_Stud_26_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_26 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_26 ;
+.
+
+maic:Stud_27  a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_27_Beam_3;
+maic:forms maic:Intersection_Stud_27_Beam_4;
+maic:forms maic:Intersection_Stud_27_Beam_5;
+maic:forms maic:Intersection_Stud_27_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_27 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_27 ;
+.
+
+maic:Stud_28 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_28_Beam_3;
+maic:forms maic:Intersection_Stud_28_Beam_4;
+maic:forms maic:Intersection_Stud_28_Beam_5;
+maic:forms maic:Intersection_Stud_28_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_28 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_28 ;
+.
+
+maic:Stud_29 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Upper_Negative_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Stud_Lower_Negative_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_29_Beam_3;
+maic:forms maic:Intersection_Stud_29_Beam_4;
+maic:forms maic:Intersection_Stud_29_Beam_5;
+maic:forms maic:Intersection_Stud_29_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_29 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_29 ;
+.
+
+maic:Stud_30 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_End_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_30_Beam_3;
+maic:forms maic:Intersection_Stud_30_Beam_4;
+maic:forms maic:Intersection_Stud_30_Beam_5;
+maic:forms maic:Intersection_Stud_30_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_30 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_30 ;
+.
+
+maic:Stud_31 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_End_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_31_Beam_3;
+maic:forms maic:Intersection_Stud_31_Beam_4;
+maic:forms maic:Intersection_Stud_31_Beam_5;
+maic:forms maic:Intersection_Stud_31_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_31 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_31 ;
+.
+
+
+maic:Stud_32 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_End_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_32_Beam_3;
+maic:forms maic:Intersection_Stud_32_Beam_4;
+maic:forms maic:Intersection_Stud_32_Beam_5;
+maic:forms maic:Intersection_Stud_32_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_32 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_32 ;
+.
+
+maic:Stud_33 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Stud_End_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_33_Beam_3;
+maic:forms maic:Intersection_Stud_33_Beam_4;
+maic:forms maic:Intersection_Stud_33_Beam_5;
+maic:forms maic:Intersection_Stud_33_Beam_6;
+maic:forms maic:Intersection_Sheeting_4_Stud_33 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_33 ;
+.
+
+maic:Beam_1 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Top_Beam_ShapeAndSize ;
+maic:forms maic:Intersection_Beam_1_Beam_2;
+.
+
+maic:Beam_2 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Top_Beam_ShapeAndSize ;
+maic:forms maic:Intersection_Beam_1_Beam_2;
+maic:forms maic:Intersection_Beam_2_Beam_3;
+.
+
+maic:Beam_3 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Top_Beam_ShapeAndSize ;
+maic:forms maic:Intersection_Beam_2_Beam_3;
+maic:forms maic:Intersection_Stud_1_Beam_3;
+maic:forms maic:Intersection_Stud_2_Beam_3;
+maic:forms maic:Intersection_Stud_3_Beam_3;
+maic:forms maic:Intersection_Stud_4_Beam_3;
+maic:forms maic:Intersection_Stud_5_Beam_3;
+maic:forms maic:Intersection_Stud_6_Beam_3;
+maic:forms maic:Intersection_Stud_7_Beam_3;
+maic:forms maic:Intersection_Stud_8_Beam_3;
+maic:forms maic:Intersection_Stud_9_Beam_3;
+maic:forms maic:Intersection_Stud_10_Beam_3;
+maic:forms maic:Intersection_Stud_11_Beam_3;
+maic:forms maic:Intersection_Stud_12_Beam_3;
+maic:forms maic:Intersection_Stud_13_Beam_3;
+maic:forms maic:Intersection_Stud_14_Beam_3;
+maic:forms maic:Intersection_Stud_15_Beam_3;
+maic:forms maic:Intersection_Stud_16_Beam_3;
+maic:forms maic:Intersection_Stud_17_Beam_3;
+maic:forms maic:Intersection_Stud_18_Beam_3;
+maic:forms maic:Intersection_Stud_19_Beam_3;
+maic:forms maic:Intersection_Stud_20_Beam_3;
+maic:forms maic:Intersection_Stud_21_Beam_3;
+maic:forms maic:Intersection_Stud_22_Beam_3;
+maic:forms maic:Intersection_Stud_23_Beam_3;
+maic:forms maic:Intersection_Stud_24_Beam_3;
+maic:forms maic:Intersection_Stud_25_Beam_3;
+maic:forms maic:Intersection_Stud_26_Beam_3;
+maic:forms maic:Intersection_Stud_27_Beam_3;
+maic:forms maic:Intersection_Stud_28_Beam_3;
+maic:forms maic:Intersection_Stud_29_Beam_3;
+maic:forms maic:Intersection_Stud_30_Beam_3;
+maic:forms maic:Intersection_Stud_31_Beam_3;
+maic:forms maic:Intersection_Stud_32_Beam_3;
+maic:forms maic:Intersection_Stud_33_Beam_3;
+.
+
+maic:Beam_4 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Bottom_Beam_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_1_Beam_4;
+maic:forms maic:Intersection_Stud_2_Beam_4;
+maic:forms maic:Intersection_Stud_3_Beam_4;
+maic:forms maic:Intersection_Stud_4_Beam_4;
+maic:forms maic:Intersection_Stud_5_Beam_4;
+maic:forms maic:Intersection_Stud_6_Beam_4;
+maic:forms maic:Intersection_Stud_7_Beam_4;
+maic:forms maic:Intersection_Stud_8_Beam_4;
+maic:forms maic:Intersection_Stud_9_Beam_4;
+maic:forms maic:Intersection_Stud_10_Beam_4;
+maic:forms maic:Intersection_Stud_11_Beam_4;
+maic:forms maic:Intersection_Stud_12_Beam_4;
+maic:forms maic:Intersection_Stud_13_Beam_4;
+maic:forms maic:Intersection_Stud_14_Beam_4;
+maic:forms maic:Intersection_Stud_15_Beam_4;
+maic:forms maic:Intersection_Stud_16_Beam_4;
+maic:forms maic:Intersection_Stud_17_Beam_4;
+maic:forms maic:Intersection_Stud_18_Beam_4;
+maic:forms maic:Intersection_Stud_19_Beam_4;
+maic:forms maic:Intersection_Stud_20_Beam_4;
+maic:forms maic:Intersection_Stud_21_Beam_4;
+maic:forms maic:Intersection_Stud_22_Beam_4;
+maic:forms maic:Intersection_Stud_23_Beam_4;
+maic:forms maic:Intersection_Stud_24_Beam_4;
+maic:forms maic:Intersection_Stud_25_Beam_4;
+maic:forms maic:Intersection_Stud_26_Beam_4;
+maic:forms maic:Intersection_Stud_27_Beam_4;
+maic:forms maic:Intersection_Stud_28_Beam_4;
+maic:forms maic:Intersection_Stud_29_Beam_4;
+maic:forms maic:Intersection_Stud_30_Beam_4;
+maic:forms maic:Intersection_Stud_31_Beam_4;
+maic:forms maic:Intersection_Stud_32_Beam_4;
+maic:forms maic:Intersection_Stud_33_Beam_4;
+.
+
+maic:Beam_5 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Top_Beam_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_1_Beam_5;
+maic:forms maic:Intersection_Stud_2_Beam_5;
+maic:forms maic:Intersection_Stud_3_Beam_5;
+maic:forms maic:Intersection_Stud_4_Beam_5;
+maic:forms maic:Intersection_Stud_5_Beam_5;
+maic:forms maic:Intersection_Stud_6_Beam_5;
+maic:forms maic:Intersection_Stud_7_Beam_5;
+maic:forms maic:Intersection_Stud_8_Beam_5;
+maic:forms maic:Intersection_Stud_9_Beam_5;
+maic:forms maic:Intersection_Stud_10_Beam_5;
+maic:forms maic:Intersection_Stud_11_Beam_5;
+maic:forms maic:Intersection_Stud_12_Beam_5;
+maic:forms maic:Intersection_Stud_13_Beam_5;
+maic:forms maic:Intersection_Stud_14_Beam_5;
+maic:forms maic:Intersection_Stud_15_Beam_5;
+maic:forms maic:Intersection_Stud_16_Beam_5;
+maic:forms maic:Intersection_Stud_17_Beam_5;
+maic:forms maic:Intersection_Stud_18_Beam_5;
+maic:forms maic:Intersection_Stud_19_Beam_5;
+maic:forms maic:Intersection_Stud_20_Beam_5;
+maic:forms maic:Intersection_Stud_21_Beam_5;
+maic:forms maic:Intersection_Stud_22_Beam_5;
+maic:forms maic:Intersection_Stud_23_Beam_5;
+maic:forms maic:Intersection_Stud_24_Beam_5;
+maic:forms maic:Intersection_Stud_25_Beam_5;
+maic:forms maic:Intersection_Stud_26_Beam_5;
+maic:forms maic:Intersection_Stud_27_Beam_5;
+maic:forms maic:Intersection_Stud_28_Beam_5;
+maic:forms maic:Intersection_Stud_29_Beam_5;
+maic:forms maic:Intersection_Stud_30_Beam_5;
+maic:forms maic:Intersection_Stud_31_Beam_5;
+maic:forms maic:Intersection_Stud_32_Beam_5;
+maic:forms maic:Intersection_Stud_33_Beam_5;
+.
+
+maic:Beam_6 a maic:Component ;
+maic:hasType maic:Structural_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:Bottom_Beam_ShapeAndSize ;
+maic:forms maic:Intersection_Stud_1_Beam_6;
+maic:forms maic:Intersection_Stud_2_Beam_6;
+maic:forms maic:Intersection_Stud_3_Beam_6;
+maic:forms maic:Intersection_Stud_4_Beam_6;
+maic:forms maic:Intersection_Stud_5_Beam_6;
+maic:forms maic:Intersection_Stud_6_Beam_6;
+maic:forms maic:Intersection_Stud_7_Beam_6;
+maic:forms maic:Intersection_Stud_8_Beam_6;
+maic:forms maic:Intersection_Stud_9_Beam_6;
+maic:forms maic:Intersection_Stud_10_Beam_6;
+maic:forms maic:Intersection_Stud_11_Beam_6;
+maic:forms maic:Intersection_Stud_12_Beam_6;
+maic:forms maic:Intersection_Stud_13_Beam_6;
+maic:forms maic:Intersection_Stud_14_Beam_6;
+maic:forms maic:Intersection_Stud_15_Beam_6;
+maic:forms maic:Intersection_Stud_16_Beam_6;
+maic:forms maic:Intersection_Stud_17_Beam_6;
+maic:forms maic:Intersection_Stud_18_Beam_6;
+maic:forms maic:Intersection_Stud_19_Beam_6;
+maic:forms maic:Intersection_Stud_20_Beam_6;
+maic:forms maic:Intersection_Stud_21_Beam_6;
+maic:forms maic:Intersection_Stud_22_Beam_6;
+maic:forms maic:Intersection_Stud_23_Beam_6;
+maic:forms maic:Intersection_Stud_24_Beam_6;
+maic:forms maic:Intersection_Stud_25_Beam_6;
+maic:forms maic:Intersection_Stud_26_Beam_6;
+maic:forms maic:Intersection_Stud_27_Beam_6;
+maic:forms maic:Intersection_Stud_28_Beam_6;
+maic:forms maic:Intersection_Stud_29_Beam_6;
+maic:forms maic:Intersection_Stud_30_Beam_6;
+maic:forms maic:Intersection_Stud_31_Beam_6;
+maic:forms maic:Intersection_Stud_32_Beam_6;
+maic:forms maic:Intersection_Stud_33_Beam_6;
+.
+
+### Material Types
+maic:OSB_Material_Type a maic:Material_Type ;
+maic:materialType "Uncoated chip material"^^xsd:string ;
+maic:fireMaterialClassification "RF3"^^xsd:string ;
+.
+
+### ShapeAndSizes
+maic:Stud_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "25"^^xsd:float ;
+maic:dimension_y "2339.0"^^xsd:float ;
+maic:dimension_z "219.0"^^xsd:float ;
+maic:mass "15.37"^^xsd:float ;
+.
+
+maic:Stud_Upper_Negative_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "25"^^xsd:float ;
+maic:dimension_y "240.0"^^xsd:float ;
+maic:dimension_z "150.0"^^xsd:float ;
+.
+
+maic:Stud_Lower_Negative_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "25"^^xsd:float ;
+maic:dimension_y "181.0"^^xsd:float ;
+maic:dimension_z "80.0"^^xsd:float ;
+.
+
+maic:Stud_Upper_Part_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "25"^^xsd:float ;
+maic:dimension_y "163.0"^^xsd:float ;
+maic:dimension_z "70.0"^^xsd:float ;
+maic:mass "0.34"^^xsd:float ;
+.
+
+maic:Stud_Lower_Part_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "25"^^xsd:float ;
+maic:dimension_y "734.0"^^xsd:float ;
+maic:dimension_z "220.0"^^xsd:float ;
+maic:mass "4.84"^^xsd:float ;
+.
+
+maic:Stud_End_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "25"^^xsd:float ;
+maic:dimension_y "1992.0"^^xsd:float ;
+maic:dimension_z "220.0"^^xsd:float ;
+maic:mass "13.15"^^xsd:float ;
+.
+
+maic:Top_Beam_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "8391.0"^^xsd:float ;
+maic:dimension_y "25"^^xsd:float ;
+maic:dimension_z "70.0"^^xsd:float ;
+maic:mass "176.2"^^xsd:float ;
+.
+
+maic:Bottom_Beam_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "8391.0"^^xsd:float ;
+maic:dimension_y "25"^^xsd:float ;
+maic:dimension_z "220.0"^^xsd:float ;
+maic:mass "553.8"^^xsd:float ;
+.
+
+
+
+##################################################################################################################
+### Section of Insulation Components
+maic:Insulation_1 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_2 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_3 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_4 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_small_ShapeAndSize ;
+.
+
+maic:Insulation_5 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_small_ShapeAndSize ;
+.
+
+maic:Insulation_6 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_7 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_8 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_small_ShapeAndSize ;
+.
+
+maic:Insulation_9 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_10 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_11 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_12 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_13 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_14 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_15 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+maic:Insulation_16 a maic:Component ;
+maic:hasType maic:Insulation_Element ;
+maic:hasMaterialType maic:Insulation_Material_Type ;
+maic:hasShapeAndSize maic:Insulation_large_ShapeAndSize ;
+.
+
+### Material Types
+maic:Insulation_Material_Type a maic:Material_Type ;
+maic:materialType "Mineral wool"^^xsd:string ;
+maic:fireMaterialClassification "none"^^xsd:string ;
+.
+
+### ShapeAndSizes
+maic:Insulation_large_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "625.0"^^xsd:float ;
+maic:dimension_y "2280.0"^^xsd:float ;
+maic:dimension_z "200.0"^^xsd:float ;
+maic:mass "1.6"^^xsd:float ;
+.
+
+maic:Insulation_small_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "625.0"^^xsd:float ;
+maic:dimension_y "735.0"^^xsd:float ;
+maic:dimension_z "200.0"^^xsd:float ;
+maic:mass "1.6"^^xsd:float ;
+.
+
+
+
+##################################################################################################################
+### Section of Exterior Sheeting Components
+maic:Exterior_Sheeting_1 a maic:Component ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasMaterialType maic:Gypsum_Material_Type ;
+maic:hasShapeAndSize maic:Gypsum_Sheeting_small_ShapeAndSize ;
+maic:forms maic:Intersection_Sheeting_1_Stud_1 ;
+maic:forms maic:Intersection_Sheeting_1_Stud_2 ;
+maic:forms maic:Intersection_Sheeting_1_Stud_3 ;
+maic:forms maic:Intersection_Sheeting_1_Stud_4 ;
+.
+
+maic:Exterior_Sheeting_2 a maic:Component ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasMaterialType maic:Gypsum_Material_Type ;
+maic:hasShapeAndSize maic:Gypsum_Sheeting_large_ShapeAndSize ;
+maic:forms maic:Intersection_Sheeting_2_Stud_5 ;
+maic:forms maic:Intersection_Sheeting_2_Stud_6 ;
+maic:forms maic:Intersection_Sheeting_2_Stud_7 ;
+maic:forms maic:Intersection_Sheeting_2_Stud_8 ;
+maic:forms maic:Intersection_Sheeting_2_Stud_9 ;
+.
+
+maic:Exterior_Sheeting_3 a maic:Component ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasMaterialType maic:Gypsum_Material_Type ;
+maic:hasShapeAndSize maic:Gypsum_Sheeting_large_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Sheeting_Opening_ShapeAndSize ;
+maic:forms maic:Intersection_Sheeting_3_Stud_10 ;
+maic:forms maic:Intersection_Sheeting_3_Stud_11 ;
+maic:forms maic:Intersection_Sheeting_3_Stud_12 ;
+maic:forms maic:Intersection_Sheeting_3_Stud_13 ;
+maic:forms maic:Intersection_Sheeting_3_Stud_14 ;
+maic:forms maic:Intersection_Sheeting_3_Stud_15 ;
+maic:forms maic:Intersection_Sheeting_3_Stud_16 ;
+maic:forms maic:Intersection_Sheeting_3_Stud_17 ;
+maic:forms maic:Intersection_Sheeting_3_Stud_18 ;
+maic:forms maic:Intersection_Sheeting_3_Stud_19 ;
+.
+
+maic:Exterior_Sheeting_4 a maic:Component ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasMaterialType maic:Gypsum_Material_Type ;
+maic:hasShapeAndSize maic:Gypsum_Sheeting_large_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Sheeting_Opening_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Sheeting_Edge_ShapeAndSize ;
+maic:forms maic:Intersection_Sheeting_4_Stud_20 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_21 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_22 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_23 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_24 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_25 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_26 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_27 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_28 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_29 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_30 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_31 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_32 ;
+maic:forms maic:Intersection_Sheeting_4_Stud_33 ;
+.
+
+### Material Types
+maic:Gypsum_Material_Type a maic:Material_Type ;
+maic:materialType "Fiber material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+.
+
+### ShapeAndSizes
+maic:Gypsum_Sheeting_large_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "2500.0"^^xsd:float ;
+maic:dimension_y "2396.0"^^xsd:float ;
+maic:dimension_z "15.0"^^xsd:float ;
+maic:mass "102.6"^^xsd:float ;
+.
+
+maic:Gypsum_Sheeting_small_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "940.0"^^xsd:float ;
+maic:dimension_y "2396.0"^^xsd:float ;
+maic:dimension_z "15.0"^^xsd:float ;
+maic:mass "52.1"^^xsd:float ;
+.
+
+maic:Sheeting_Opening_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "874.0"^^xsd:float ;
+maic:dimension_y "1543.0"^^xsd:float ;
+maic:dimension_z "15.0"^^xsd:float ;
+.
+
+maic:Sheeting_Edge_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "581.0"^^xsd:float ;
+maic:dimension_y "237.0"^^xsd:float ;
+maic:dimension_z "15.0"^^xsd:float ;
+.
+
+
+
+##################################################################################################################
+### Section of Interior Sheeting Components
+maic:Interior_Sheeting_1 a maic:Component ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:OSB_Sheeting_small_ShapeAndSize ;
+maic:forms maic:Intersection_Interior_Sheeting_1_Stud_1 ;
+maic:forms maic:Intersection_Interior_Sheeting_1_Stud_2 ;
+maic:forms maic:Intersection_Interior_Sheeting_1_Stud_3 ;
+maic:forms maic:Intersection_Interior_Sheeting_1_Stud_4 ;
+.
+
+maic:Interior_Sheeting_2 a maic:Component ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:OSB_Sheeting_large_ShapeAndSize ;
+maic:forms maic:Intersection_Interior_Sheeting_2_Stud_5 ;
+maic:forms maic:Intersection_Interior_Sheeting_2_Stud_6 ;
+maic:forms maic:Intersection_Interior_Sheeting_2_Stud_7 ;
+maic:forms maic:Intersection_Interior_Sheeting_2_Stud_8 ;
+maic:forms maic:Intersection_Interior_Sheeting_2_Stud_9 ;
+.
+
+maic:Interior_Sheeting_3 a maic:Component ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:OSB_Sheeting_large_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Sheeting_Opening_ShapeAndSize ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_10 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_11 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_12 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_13 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_14 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_15 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_16 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_17 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_18 ;
+maic:forms maic:Intersection_Interior_Sheeting_3_Stud_19 ;
+.
+
+maic:Interior_Sheeting_4 a maic:Component ;
+maic:hasType maic:Sheeting_Element ;
+maic:hasMaterialType maic:OSB_Material_Type ;
+maic:hasShapeAndSize maic:OSB_Sheeting_large_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Sheeting_Opening_ShapeAndSize ;
+maic:hasNegativeShapeAndSize maic:Sheeting_Edge_ShapeAndSize ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_20 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_21 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_22 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_23 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_24 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_25 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_26 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_27 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_28 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_29 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_30 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_31 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_32 ;
+maic:forms maic:Intersection_Interior_Sheeting_4_Stud_33 ;
+.
+
+### Material Types
+maic:OSB_Material_Type a maic:Material_Type ;
+maic:materialType "Uncoated chip material"^^xsd:string ;
+maic:fireMaterialClassification "RF1"^^xsd:string ;
+.
+
+### ShapeAndSizes
+maic:OSB_Sheeting_large_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "2500.0"^^xsd:float ;
+maic:dimension_y "2396.0"^^xsd:float ;
+maic:dimension_z "15.0"^^xsd:float ;
+maic:mass "102.6"^^xsd:float ;
+.
+
+maic:OSB_Sheeting_small_ShapeAndSize a maic:BoxShape ;
+maic:dimension_x "940.0"^^xsd:float ;
+maic:dimension_y "2396.0"^^xsd:float ;
+maic:dimension_z "15.0"^^xsd:float ;
+maic:mass "52.1"^^xsd:float ;
+.
+
+
+
+##################################################################################################################
+### Section of Intersections
+maic:Opening_1 a maic:Opening ;
+.
+
+maic:Opening_2 a maic:Opening ;
+.
+
+maic:Intersection_Beam_1_Beam_2 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Beam_2_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_1_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_2_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_3_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_4_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_5_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_6_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_7_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_8_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_9_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_10_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_11_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_12_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_13_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_14_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_15_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_16_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_17_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_18_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_19_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_20_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_21_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_22_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_23_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_24_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_25_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_26_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_27_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_28_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_29_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_30_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_31_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_32_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_33_Beam_3 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_1_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_2_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_3_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_4_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_5_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_6_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_7_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_8_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_9_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_10_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_11_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_12_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_13_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_14_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_15_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_16_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_17_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_18_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_19_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_20_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_21_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_22_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_23_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_24_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_25_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_26_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_27_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_28_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_29_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_30_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_31_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_32_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_33_Beam_4 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_1_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_2_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_3_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_4_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_5_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_6_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_7_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_8_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_9_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_10_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_11_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_12_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_13_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_14_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_15_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_16_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_17_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_18_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_19_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_20_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_21_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_22_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_23_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_24_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_25_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_26_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_27_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_28_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_29_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_30_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_31_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_32_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_33_Beam_5 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_1_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_2_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_3_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_4_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_5_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_6_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_7_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_8_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_9_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_10_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_11_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_12_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_13_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_14_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_15_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_16_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_17_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_18_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_19_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_20_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_21_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_22_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_23_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_24_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_25_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_26_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_27_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_28_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_29_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_30_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_31_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_32_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Stud_33_Beam_6 a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_1_Stud_1  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_1_Stud_2  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_1_Stud_3  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_1_Stud_4  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_2_Stud_5  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_2_Stud_6  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_2_Stud_7  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_2_Stud_8  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_2_Stud_9  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_3_Stud_10  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_3_Stud_11  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_3_Stud_12  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_3_Stud_13  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_3_Stud_14  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_3_Stud_15  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_3_Stud_16  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_3_Stud_17  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_3_Stud_18  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_3_Stud_19  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_20  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_21  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_22  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_23  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_24  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_25  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_26  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_27  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_28  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_29  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_30  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_31  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_32  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Sheeting_4_Stud_33  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_1_Stud_1  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_1_Stud_2  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_1_Stud_3  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_1_Stud_4  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_2_Stud_5  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_2_Stud_6  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_2_Stud_7  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_2_Stud_8  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_2_Stud_9  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_3_Stud_10  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_3_Stud_11  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_3_Stud_12  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_3_Stud_13  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_3_Stud_14  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_3_Stud_15  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_3_Stud_16  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_3_Stud_17  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_3_Stud_18  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_3_Stud_19  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_20  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_21  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_22  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_23  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_24  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_25  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_26  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_27  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_28  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_29  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_30  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_31  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_32  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.
+
+maic:Intersection_Interior_Sheeting_4_Stud_33  a maic:Component_Intersection ;
+maic:connectionType "Direct connection with mechanical fixing devices"^^xsd:string ;
+maic:tolerance "1"^^xsd:float ;
+.

@@ -1,0 +1,659 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/florianschmid/ontologies/2021/11/maic#"
+     xml:base="http://www.semanticweb.org/florianschmid/ontologies/2021/11/maic"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/maic"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/maic#SHACLRuleObjectProperties -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#SHACLRuleObjectProperties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#canBeProducedUsing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#canBeProducedUsing">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/maic#SHACLRuleObjectProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Direct_Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#consistOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#consistOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#consistOfComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#consistOfComponent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#consistOfIntersection -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#consistOfIntersection">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Intersection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#consumes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#consumes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Resources"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#forms -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#forms">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#has -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#has">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Opening"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasAllowedItemShapeAndSize_max -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasAllowedItemShapeAndSize_max">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Capability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasAllowedItemShapeAndSize_min -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasAllowedItemShapeAndSize_min">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Capability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasAllowedNegativeItemShapeAndSize_max -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasAllowedNegativeItemShapeAndSize_max">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Capability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasAllowedNegativeItemShapeAndSize_min -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasAllowedNegativeItemShapeAndSize_min">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Capability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasCapability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasCapability">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Capability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasCapabilityToProduceType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasCapabilityToProduceType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#WorkStation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Typology"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasMaterialType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasMaterialType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Material_Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasNegativeShapeAndSize -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasNegativeShapeAndSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasPerformance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasPerformance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Performance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasSameConnectionTypeProperties -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasSameConnectionTypeProperties">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/maic#SHACLRuleObjectProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Intersection"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Direct_Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasSameMaterialTypeProperties -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasSameMaterialTypeProperties">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/maic#SHACLRuleObjectProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Direct_Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasShapeAndSize -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasShapeAndSize">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasSuitableShapeAndSize -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasSuitableShapeAndSize">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/maic#SHACLRuleObjectProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Direct_Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#hasType">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Typology"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#isComposedOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#isComposedOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Combined_Capability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Capability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#isProducedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#isProducedBy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#isProducedUsing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#isProducedUsing">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/maic#SHACLRuleObjectProperties"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Direct_Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#isUsedToProduce -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/maic#isUsedToProduce">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Production_Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/maic#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/maic#apparentSoundInsulationIndex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#apparentSoundInsulationIndex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Acoustic-Rating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#connectionMaterialIndex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#connectionMaterialIndex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Capability"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#connectionType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#connectionType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Direct_Material"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Intersection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#cycleTime_average -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#cycleTime_average">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#dimension_x -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#dimension_x">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#dimension_y -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#dimension_y">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#dimension_z -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#dimension_z">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#fireMaterialClassification -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#fireMaterialClassification">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#fireSectionClassification -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#fireSectionClassification">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Fire-Rating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasActivityCost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#hasActivityCost">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasAnyShapeAndSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#hasAnyShapeAndSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Direct_Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#hasCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Direct_Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#hasResourceCost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#hasResourceCost">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Resources"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#leadTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#leadTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Constants"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#load-bearingCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#load-bearingCapacity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Load-bearing_Capacity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#mass -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#mass">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#materialType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#materialType">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#tolerance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#tolerance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Capability"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Component_Intersection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#u-value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/maic#u-value">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/maic#Thermal_Transmittance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Acoustic-Rating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Acoustic-Rating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Performance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Activity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#BoxShape -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#BoxShape">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Capability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Capability"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Combined_Capability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Combined_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Component -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Component"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Component_Intersection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Component_Intersection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Intersection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Constants -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Constants"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Direct_Equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Direct_Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Resources"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Direct_Labour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Direct_Labour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Resources"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Direct_Material -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Direct_Material">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Resources"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Element -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Element">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Typology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Fire-Rating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Fire-Rating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Performance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Frame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Frame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Typology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Intersection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Intersection"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Load-bearing_Capacity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Load-bearing_Capacity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Performance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Material_Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Material_Type"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Module -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Module">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Typology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Opening -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Opening">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Intersection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Panel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Panel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Typology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Penetration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Penetration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Intersection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Performance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Performance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Product -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Product"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Production_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Production_Process"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Resources -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Resources"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#ShapeAndSizeDefinition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#ShapeAndSizeDefinition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Simple_Capability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Simple_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Thermal_Transmittance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Thermal_Transmittance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/maic#Performance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#Typology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#Typology"/>
+    
+
+
+    <!-- http://www.semanticweb.org/maic#WorkStation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/maic#WorkStation"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

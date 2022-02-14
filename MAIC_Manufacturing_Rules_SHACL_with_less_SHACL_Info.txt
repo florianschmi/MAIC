@@ -1,0 +1,761 @@
+PREFIX maic:  <http://www.semanticweb.org/maic#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sh:    <http://www.w3.org/ns/shacl#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+
+
+
+##################################################################################################################
+### ProductionProcessRuleShape
+##################################################################################################################
+### Checks the rule: The production process must have the capability to produce the type of all components.
+### Output: Waring if the production process cannot produce the type of the component.
+maic:ProductionProcessRuleShape rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "There is no work station in the production process to produce {$this}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+    {
+    SELECT $this (SUM(?typology_count) as ?total_typology)
+
+    WHERE {
+        $this maic:hasType ?component_typology .
+        ?component_typology rdf:type ?component_typology_type .
+        ?workstation maic:hasCapabilityToProduceType ?workstation_typology .
+        BIND(IF(?workstation_typology = ?component_typology || ?component_typology_type = maic:Element, 1, 0) AS ?typology_count) .
+    }
+    GROUP BY $this
+    }
+    FILTER(?total_typology = 0) .
+ }"""
+ ] ;
+ sh:targetClass maic:Component ;
+ sh:severity sh:Warning ;
+ sh:order 1 ;
+ sh:deactivated false ;
+.
+
+
+
+##################################################################################################################
+### ComponentMaterialRuleShapes
+##################################################################################################################
+### Checks the rule: The direct material with the same material type and fire classification must be available to the production process.
+### Output: Warning if there is no direct material with the same material type and fire classification.
+maic:ComponentMaterialRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "There is no direct material with material type and fire-protection material classification of {$this}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+ {
+  SELECT $this (SUM(?has_suited_direct_material) AS ?direct_material_count)
+  WHERE {
+   $this maic:hasMaterialType ?component_material .
+   ?component_material maic:materialType ?component_material_type .
+   ?component_material maic:fireMaterialClassification ?component_fire_material_classification .
+   ?direct_material a maic:Direct_Material .
+   ?direct_material maic:materialType ?direct_material_material_type .
+   ?direct_material maic:fireMaterialClassification ?direct_material_fire_material_classification .
+   BIND(IF(?component_material_type = ?direct_material_material_type && ?component_fire_material_classification = ?direct_material_fire_material_classification, 1, 0) AS ?has_suited_direct_material) .
+  }
+  GROUP BY $this
+  }
+  FILTER (?direct_material_count = 0) .
+ }"""
+ ] ;
+ sh:targetClass maic:Component ;
+ sh:severity sh:Warning ;
+ sh:order 2 ;
+ sh:deactivated false ;
+.
+
+
+
+### Checks the rule: The direct material with the same material type and fire classification must have equal or larger x-, y-, and z-dimension.
+### Output: Warning if there is no direct material with the same material type and fire classification and equal or larger dimensions.
+maic:ComponentMaterialRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "There is no direct material with the same material type and fire classification, which has the same or larger dimensions than {$this}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+ {
+  SELECT $this (SUM(?has_suited_direct_material) AS ?direct_material_count)
+  WHERE {
+   $this maic:hasShapeAndSize ?component_shape_and_size .
+   ?component_shape_and_size maic:dimension_x ?component_dimension_x .
+   ?component_shape_and_size maic:dimension_y ?component_dimension_y .
+   ?component_shape_and_size maic:dimension_z ?component_dimension_z .
+   $this maic:hasSameMaterialTypeProperties ?direct_material .
+   ?direct_material maic:hasShapeAndSize ?direct_material_shape_and_size .
+   ?direct_material_shape_and_size maic:dimension_x ?direct_material_dimension_x .
+   ?direct_material_shape_and_size maic:dimension_y ?direct_material_dimension_y .
+   ?direct_material_shape_and_size maic:dimension_z ?direct_material_dimension_z .
+   BIND(IF(?component_dimension_x <= ?direct_material_dimension_x && ?component_dimension_y <= ?direct_material_dimension_y && ?component_dimension_z <= ?direct_material_dimension_z, 1, 0) AS ?has_suited_direct_material) .
+  }
+  GROUP BY $this
+  }
+ FILTER (?direct_material_count = 0) .
+ }"""
+ ] ;
+ sh:targetClass maic:Component ;
+ sh:severity sh:Warning ;
+ sh:order 3 ;
+ sh:deactivated false ;
+.
+
+
+
+### Checks the rule: The direct material with the same material type, fire classification and equal or larger dimensions must have capabilities with negative item shape and size to create the component's shape and size if their ShapeAndSize can be produced in the construction process.
+### Output: Warning if there is no direct material with the capability to create the component's shape.
+maic:ComponentMaterialRuleShapeIII rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "There is no capability in the production process to create {$this} from any direct material." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+ {
+  SELECT $this (SUM(?has_suited_direct_material) AS ?direct_material_count)
+  WHERE {
+   $this maic:hasShapeAndSize ?component_shape_and_size .
+   ?component_shape_and_size maic:dimension_x ?component_dimension_x .
+   ?component_shape_and_size maic:dimension_y ?component_dimension_y .
+   ?component_shape_and_size maic:dimension_z ?component_dimension_z .
+   $this maic:couldBeProducedUsing ?direct_material .
+   ?direct_material maic:hasShapeAndSize ?direct_material_shape_and_size .
+   ?direct_material_shape_and_size maic:dimension_x ?direct_material_dimension_x .
+   ?direct_material_shape_and_size maic:dimension_y ?direct_material_dimension_y .
+   ?direct_material_shape_and_size maic:dimension_z ?direct_material_dimension_z .
+   ?direct_material maic:hasCapability ?capability .
+   ?capability maic:hasAllowedNegativeItemShapeAndSize_max ?shape_and_size_max .
+   ?shape_and_size_max maic:dimension_x ?negative_dimension_x_max .
+   ?shape_and_size_max maic:dimension_y ?negative_dimension_y_max .
+   ?shape_and_size_max maic:dimension_z ?negative_dimension_z_max .
+   ?capability maic:hasAllowedNegativeItemShapeAndSize_min ?shape_and_size_min .
+   ?shape_and_size_min maic:dimension_x ?negative_dimension_x_min .
+   ?shape_and_size_min maic:dimension_y ?negative_dimension_y_min .
+   ?shape_and_size_min maic:dimension_z ?negative_dimension_z_min .
+   BIND(?direct_material_dimension_x - ?component_dimension_x AS ?difference_dimension_x) .
+   BIND(?direct_material_dimension_y - ?component_dimension_y AS ?difference_dimension_y) .
+   BIND(?direct_material_dimension_z - ?component_dimension_z AS ?difference_dimension_z) .
+   BIND(IF((?difference_dimension_x <= ?negative_dimension_x_max && ?negative_dimension_x_min <= ?difference_dimension_x && ?difference_dimension_y <= ?negative_dimension_y_max && ?negative_dimension_y_min <= ?difference_dimension_y && ?difference_dimension_z <= ?negative_dimension_z_max && ?negative_dimension_z_min <= ?difference_dimension_z) || (?difference_dimension_x = 0 &&  ?difference_dimension_y = 0 && ?difference_dimension_z = 0), 1, 0) AS ?has_suited_direct_material) .
+  }
+  GROUP BY $this
+  }
+ FILTER (?direct_material_count = 0) .
+ }"""
+ ] ;
+ sh:targetClass maic:Component ;
+ sh:severity sh:Warning ;
+ sh:order 4 ;
+ sh:deactivated false ;
+.
+
+
+
+### Checks the rule: The direct material stock must be equal or larger then the material demanded for components.
+### Output: Warning if there is too little direct material for the production of all components.
+maic:ComponentMaterialRuleShapeIV rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "The stock of {$this} is too little for the production of all components." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+ {
+ SELECT $this ?stock_count (COUNT(*) AS ?direct_material_count)
+ WHERE {
+     ?component a maic:Component .
+     ?component maic:isProducedUsing ?direct_material .
+     {
+       SELECT $this ?stock_count
+       WHERE {
+         $this maic:hasCount ?stock_count .
+       }
+     }
+     FILTER(?direct_material = $this) .
+   }
+   GROUP BY $this ?stock_count
+ }
+ FILTER (?direct_material_count > ?stock_count) .
+}"""
+ ] ;
+ sh:targetClass maic:Direct_Material ;
+ sh:severity sh:Warning ;
+ sh:order 5 ;
+ sh:deactivated false ;
+.
+
+
+
+### User Information: Displays which direct material is used for the production of a component.
+### Output: Mapping of components and direct material that can be used for production.
+maic:ComponentMaterialRuleShapeV rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "{$this} is produced using {?direct_material}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+ $this maic:isProducedUsing ?direct_material .
+ }"""
+ ] ;
+ sh:targetClass maic:Component ;
+ sh:severity sh:Info ;
+ sh:order 6 ;
+ sh:deactivated true ;
+.
+
+
+
+##################################################################################################################
+### ConnectionMaterialRuleShapes
+##################################################################################################################
+### Checks the rule: The direct material with the same connection type must be available to the production process.
+### Output: Warning if there is no direct material with the same connection type.
+maic:ConnectionMaterialRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "There is no direct material with connection type of {$this}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+ {
+  SELECT $this (SUM(?has_suited_direct_material) AS ?direct_material_count)
+  WHERE {
+   $this maic:connectionType ?intersection_connection_type .
+   ?direct_material a maic:Direct_Material .
+   ?direct_material maic:connectionType ?direct_material_connection_type .
+   BIND(IF(?intersection_connection_type = ?direct_material_connection_type, 1, 0) AS ?has_suited_direct_material) .
+  }
+  GROUP BY $this
+  }
+ FILTER (?direct_material_count = 0) .
+ }"""
+ ] ;
+ sh:targetClass maic:Component_Intersection ;
+ sh:severity sh:Warning ;
+ sh:order 7 ;
+ sh:deactivated false ;
+.
+
+
+
+### Checks the rule: The direct material stock must be equal or larger then the material demanded for connections.
+### Output: Warning if there is too little direct material for the production of all connections.
+maic:ConnectionMaterialRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "The stock of {$this} is too little for the production of all components." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+ {
+ SELECT $this ?stock_count_adjusted (COUNT(*) AS ?direct_material_count)
+ WHERE {
+     ?intersection a maic:Component_Intersection .
+     ?intersection maic:isProducedUsing ?direct_material .
+     {
+       SELECT $this ?stock_count_adjusted
+       WHERE {
+         $this maic:hasCount ?stock_count .
+         $this maic:hasCapability ?capability .
+         ?capability maic:connectionMaterialIndex ?connection_material_index .
+         BIND(?stock_count / ?connection_material_index AS ?stock_count_adjusted)
+       }
+     }
+     FILTER(?direct_material = $this) .
+   }
+   GROUP BY $this ?stock_count_adjusted
+ }
+ FILTER (?direct_material_count > ?stock_count_adjusted) .
+}"""
+ ] ;
+ sh:targetClass maic:Direct_Material ;
+ sh:severity sh:Warning ;
+ sh:order 8 ;
+ sh:deactivated false ;
+.
+
+
+
+### User Information: Displays which direct material is used for the production of an intersection.
+### Output: Mapping of intersections and direct material that can be used for production.
+maic:ConnectionMaterialRuleShapeIII rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "{$this} is produced using {?direct_material}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+  $this maic:isProducedUsing ?direct_material .
+ }"""
+ ] ;
+ sh:targetClass maic:Component_Intersection ;
+ sh:severity sh:Info ;
+ sh:order 9 ;
+ sh:deactivated true ;
+.
+
+
+
+##################################################################################################################
+### ShapeAndSizeRuleShapes
+##################################################################################################################
+### Checks, the rule: The workstation must be able to handle the shape and size of the component.
+### Output: Waring if the workstation cannot handle the shape and size of the component.
+maic:ShapeAndSizeRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "{$this} cannot handle the shape and size of {?component}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+  $this maic:hasCapabilityToProduceType ?workstation_typology .
+  $this maic:hasCapability ?capability .
+  ?capability maic:hasAllowedItemShapeAndSize_max ?shape_and_size_max .
+  ?shape_and_size_max maic:dimension_x ?workstation_dimension_x_max .
+  ?shape_and_size_max maic:dimension_y ?workstation_dimension_y_max .
+  ?shape_and_size_max maic:dimension_z ?workstation_dimension_z_max .
+  ?capability maic:hasAllowedItemShapeAndSize_min ?shape_and_size_min .
+  ?shape_and_size_min maic:dimension_x ?workstation_dimension_x_min .
+  ?shape_and_size_min maic:dimension_y ?workstation_dimension_y_min .
+  ?shape_and_size_min maic:dimension_z ?workstation_dimension_z_min .
+  ?component a maic:Component.
+  ?component maic:hasType ?component_typology .
+  ?component maic:hasShapeAndSize ?component_shape_and_size .
+  ?component_shape_and_size maic:dimension_x ?component_shape_and_size_dimension_x .
+  ?component_shape_and_size maic:dimension_y ?component_shape_and_size_dimension_y .
+  ?component_shape_and_size maic:dimension_z ?component_shape_and_size_dimension_z .
+  FILTER ( (?workstation_typology = ?component_typology) && (?workstation_dimension_x_min >= ?component_shape_and_size_dimension_x || ?workstation_dimension_y_min >= ?component_shape_and_size_dimension_y || ?workstation_dimension_z_min >= ?component_shape_and_size_dimension_z || ?component_shape_and_size_dimension_x >= ?workstation_dimension_x_max || ?component_shape_and_size_dimension_y >= ?workstation_dimension_y_max || ?component_shape_and_size_dimension_z >= ?workstation_dimension_z_max)) .
+ }"""
+ ] ;
+ sh:targetClass maic:WorkStation ;
+ sh:severity sh:Warning ;
+ sh:order 10 ;
+ sh:deactivated false ;
+.
+
+
+
+### Checks, the rule: The workstation must be able to handle the mass of the component.
+### Output: Waring if the workstation cannot handle the mass of the component.
+maic:ShapeAndSizeRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "{$this} cannot handle the mass of {?component}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+  SELECT *
+  WHERE {
+   $this maic:hasCapabilityToProduceType ?workstation_typology .
+   $this maic:hasCapability ?capability .
+   ?capability maic:hasAllowedItemShapeAndSize_max ?shape_and_size_max .
+   ?shape_and_size_max maic:mass ?workstation_mass_max .
+   ?capability maic:hasAllowedItemShapeAndSize_min ?shape_and_size_min .
+   ?shape_and_size_min maic:mass ?workstation_mass_min .
+   ?component a maic:Component.
+   ?component maic:hasType ?component_typology .
+   ?component maic:hasShapeAndSize ?component_shape_and_size .
+   ?component_shape_and_size maic:mass ?component_mass .
+  FILTER ((?workstation_typology = ?component_typology) && (?workstation_mass_min >= ?component_mass || ?component_mass >= ?workstation_mass_max)) .
+  }"""
+ ] ;
+ sh:targetClass maic:WorkStation ;
+ sh:severity sh:Warning ;
+ sh:order 11 ;
+ sh:deactivated false ;
+.
+
+
+
+##################################################################################################################
+### NegativeShapeAndSizeRuleShape
+##################################################################################################################
+### Checks the rule: The equipment must be able to create the negative shape and size of the component.
+### Output: Waring if the equipment cannot create the negative shape and size of the component.
+maic:NegativeShapeAndSizeRuleShape rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "{?negative_shape_and_size} of {$this} cannot be created by any equipment." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT *
+ WHERE {
+  {
+  SELECT $this (SUM(?negative_item_count) AS ?total_negative_item_count)
+  WHERE {
+   $this maic:isProducedUsing ?direct_material .
+   ?direct_material maic:hasAnyShapeAndSize ?direct_material_has_any_shape_and_size .
+   ?direct_material maic:hasCapability ?direct_material_capability .
+   $this maic:hasNegativeShapeAndSize ?negative_shape_and_size .
+   ?negative_shape_and_size maic:dimension_x ?negative_shape_and_size_dimension_x .
+   ?negative_shape_and_size maic:dimension_y ?negative_shape_and_size_dimension_y .
+   ?negative_shape_and_size maic:dimension_z ?negative_shape_and_size_dimension_z .
+   ?equipment a maic:Direct_Equipment .
+   ?equipment maic:hasCapability ?equipment_capability .
+   ?equipment_capability maic:hasAllowedNegativeItemShapeAndSize_max ?shape_and_size_max .
+   ?shape_and_size_max maic:dimension_x ?capability_dimension_x_max .
+   ?shape_and_size_max maic:dimension_y ?capability_dimension_y_max .
+   ?shape_and_size_max maic:dimension_z ?capability_dimension_z_max .
+   ?equipment_capability maic:hasAllowedNegativeItemShapeAndSize_min ?shape_and_size_min .
+   ?shape_and_size_min maic:dimension_x ?capability_dimension_x_min .
+   ?shape_and_size_min maic:dimension_y ?capability_dimension_y_min .
+   ?shape_and_size_min maic:dimension_z ?capability_dimension_z_min .
+   BIND(IF(?capability_dimension_x_min <= ?negative_shape_and_size_dimension_x && ?capability_dimension_y_min <= ?negative_shape_and_size_dimension_y && ?capability_dimension_z_min <= ?negative_shape_and_size_dimension_z && ?negative_shape_and_size_dimension_x <= ?capability_dimension_x_max && ?negative_shape_and_size_dimension_y <= ?capability_dimension_y_max && ?negative_shape_and_size_dimension_z <= ?capability_dimension_z_max, 1, 0) AS ?negative_item_count) .
+   FILTER(?direct_material_has_any_shape_and_size = False && ?direct_material_capability = ?equipment_capability)
+  }
+  GROUP BY $this
+ }
+ FILTER(?total_negative_item_count = 0)
+ }"""
+ ] ;
+ sh:targetClass maic:Component ;
+ sh:severity sh:Warning ;
+ sh:order 12 ;
+ sh:deactivated false ;
+.
+
+
+
+##################################################################################################################
+### ToleranceRuleShape
+##################################################################################################################
+### Checks the rule: The equipment must be able to achieve the tolerance demanded by all components of the product.
+### Output: Waring if the equipment cannot achieve the tolerance demanded by all components of the product.
+maic:ToleranceRuleShape rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "The tolerance of {$this} is lower than the production tolerance." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT $this
+ WHERE {
+  $this maic:consistOfIntersection ?intersection .
+  ?intersection maic:tolerance ?product_tolerance_intersection .
+  $this maic:consistOfComponent ?component .
+  ?component maic:hasPerformance ?fire_rating .
+  ?fire_rating maic:fireSectionClassification ?fire_section_classification .
+  BIND(IF(?fire_section_classification NOT IN ("none"^^xsd:string), "1.0"^^xsd:float, "0.0"^^xsd:float) AS ?product_tolerance_fire_rating) .
+  BIND(IF(?product_tolerance_intersection <= ?product_tolerance_fire_rating, ?product_tolerance_intersection, ?product_tolerance_fire_rating) AS ?product_tolerance) .
+  ?equipment a maic:Direct_Equipment .
+  ?equipment maic:hasCapability ?capability .
+  ?capability maic:tolerance ?production_tolerance .
+  FILTER (?product_tolerance < ?production_tolerance) .
+ }
+ GROUP BY $this"""
+ ] ;
+ sh:targetClass maic:Product ;
+ sh:severity sh:Warning ;
+ sh:order 13 ;
+ sh:deactivated false ;
+.
+
+
+
+##################################################################################################################
+### DurationRuleShapes
+##################################################################################################################
+### Checks the rule: The average cycle time of the production process must be equal or less than the lead time demanded.
+### Output: Waring if the production process exceeds the lead time demanded.
+maic:DurationRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "The average cycle time of {?total_cycle_time} seconds of {$this} exeeds the lead time of {?lead_time} seconds." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+  SELECT *
+  WHERE {
+  ?constant a maic:Constant .
+  ?constant maic:leadTime ?lead_time .
+  {
+   SELECT  $this (SUM(?cycle_time) AS ?total_cycle_time)
+   WHERE {
+    $this maic:consistOf ?workstation .
+    ?workstation maic:consistOf ?activity .
+    ?activity maic:cycleTime_average ?cycle_time .
+  }
+  GROUP BY $this
+  }
+  FILTER (?total_cycle_time > ?lead_time).
+  }"""
+ ] ;
+ sh:targetClass maic:Production_Process ;
+ sh:severity sh:Warning ;
+ sh:order 14 ;
+ sh:deactivated false ;
+.
+
+
+
+### User Information: Displays the total average cycle time of the production process.
+### Output: The total average cycle time of the production process.
+maic:DurationRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "The average cycle time of {$this} is {?total_cycle_time} seconds." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+   SELECT  $this (SUM(?cycle_time) AS ?total_cycle_time)
+   WHERE {
+    $this maic:consistOf ?workstation .
+    ?workstation maic:consistOf ?activity .
+    ?activity maic:cycleTime_average ?cycle_time .
+  }
+  GROUP BY $this"""
+ ] ;
+ sh:targetClass maic:Production_Process ;
+ sh:severity sh:Info ;
+ sh:order 15 ;
+ sh:deactivated false ;
+.
+
+
+
+##################################################################################################################
+### CostRuleShapes
+##################################################################################################################
+### User Information: Displays the costs of the direct material consumed for components.
+### Output: The costs of the direct material consumed for components.
+maic:CostsRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "The cost for the direct material consumed for components during {$this} is CHF {?total_direct_material_cost}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+   SELECT $this (SUM(?direct_material_cost) AS ?total_direct_material_cost)
+   WHERE {
+   $this maic:consistOfComponent ?component .
+   ?component maic:isProducedUsing ?direct_material .
+   ?direct_material maic:hasResourceCost ?direct_material_cost .
+  }
+  GROUP BY $this"""
+ ] ;
+ sh:targetClass maic:Product ;
+ sh:severity sh:Info ;
+ sh:order 16 ;
+ sh:deactivated false ;
+.
+
+
+
+### User Information: Displays the costs of the direct material consumed for intersections.
+### Output: The costs of the direct material consumed for intersections.
+maic:CostsRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "The cost for the direct material consumed for intersections during {$this} is CHF {?total_direct_material_cost}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+   SELECT $this (SUM(?direct_material_cost_adjusted) AS ?total_direct_material_cost)
+   WHERE {
+   $this maic:consistOfIntersection ?intersection .
+   ?intersection maic:isProducedUsing ?direct_material .
+   ?direct_material maic:hasCapability ?capability .
+   ?capability maic:connectionMaterialIndex ?connection_material_index .
+   ?direct_material maic:hasResourceCost ?direct_material_cost .
+   BIND(?direct_material_cost * ?connection_material_index AS ?direct_material_cost_adjusted) .
+  }
+  GROUP BY $this"""
+ ] ;
+ sh:targetClass maic:Product ;
+ sh:severity sh:Info ;
+ sh:order 17 ;
+ sh:deactivated false ;
+.
+
+
+
+### User Information: Displays the costs of the direct equipment consumed.
+### Output: The costs of the direct equipment consumed.
+maic:CostsRuleShapeIII rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "The cost of direct equipment consumed during {$this} is CHF {?total_equipment_cost}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT $this (SUM(?resource_cost) AS ?total_equipment_cost)
+ WHERE {
+  $this maic:consistOf ?workstation .
+  ?workstation maic:consistOf ?activity .
+  ?activity maic:consumes ?resource .
+  ?resource maic:hasResourceCost ?resource_cost .
+  ?resource rdf:type ?resource_type .
+  FILTER(?resource_type = maic:Direct_Equipment) .
+ }
+ GROUP BY $this"""
+ ] ;
+ sh:targetClass maic:Production_Process ;
+ sh:severity sh:Info ;
+ sh:order 18 ;
+ sh:deactivated false ;
+.
+
+
+
+### User Information: Displays the costs of the direct labour consumed.
+### Output: The costs of the direct labour consumed.
+maic:CostsRuleShapeIV rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "The cost of direct labour consumed during {$this} is CHF {?total_labour_cost}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+ SELECT $this (SUM(?resource_cost) AS ?total_labour_cost)
+ WHERE {
+  $this maic:consistOf ?workstation .
+  ?workstation maic:consistOf ?activity .
+  ?activity maic:consumes ?resource .
+  ?resource maic:hasResourceCost ?resource_cost .
+  ?resource rdf:type ?resource_type .
+  FILTER(?resource_type = maic:Direct_Labour) .
+ }
+ GROUP BY $this"""
+ ] ;
+ sh:targetClass maic:Production_Process ;
+ sh:severity sh:Info ;
+ sh:order 19 ;
+ sh:deactivated false ;
+.
+
+
+
+### User Information: Displays the costs of all activities of the production process.
+### Output: The  costs of all activities of the production process.
+maic:CostsRuleShapeV rdf:type owl:NamedIndividual , sh:NodeShape ;
+ sh:sparql [
+  rdf:type sh:SPARQLConstraint ;
+  sh:message "The cost of all activities of {$this} is CHF {?total_activity_cost}." ;
+  sh:prefixes [
+   sh:declare [
+    sh:namespace "http://www.semanticweb.org/maic#"^^xsd:anyURI ;
+    sh:prefix "maic"
+   ]
+  ] ;
+ sh:select """
+   SELECT $this (SUM(?activity_cost) AS ?total_activity_cost)
+   WHERE {
+   $this maic:consistOf ?workstation .
+   ?workstation maic:consistOf ?activity .
+   ?activity maic:hasActivityCost ?activity_cost .
+  }
+  GROUP BY $this"""
+ ] ;
+ sh:targetClass maic:Production_Process ;
+ sh:severity sh:Info ;
+ sh:order 20 ;
+ sh:deactivated false ;
+.
