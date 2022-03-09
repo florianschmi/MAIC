@@ -10,8 +10,8 @@ PREFIX owl:   <http://www.w3.org/2002/07/owl#>
 ##################################################################################################################
 ### ProductionProcessRuleShape
 ##################################################################################################################
-### Checks the rule: The production process must have the capability to produce the type of all components.
-### Output: Waring if the production process cannot produce the type of the component.
+### Checks the rule: The workstation must have the capability to produce all component typologies of the design.
+### Output: Waring if the production process cannot produce the typology demanded by the design.
 maic:ProductionProcessRuleShape rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -50,8 +50,8 @@ maic:ProductionProcessRuleShape rdf:type owl:NamedIndividual , sh:NodeShape ;
 ##################################################################################################################
 ### ComponentMaterialRuleShapes
 ##################################################################################################################
-### Checks the rule: The direct material with the same material type and fire classification must be available to the production process.
-### Output: Warning if there is no direct material with the same material type and fire classification.
+### Checks the rule: A direct material with the material type and material fire classification of the design must be available.
+### Output: Warning if there is no direct material with the material type and material fire classification of the design.
 maic:ComponentMaterialRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -89,8 +89,8 @@ maic:ComponentMaterialRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### Checks the rule: The direct material with the same material type and fire classification must have equal or larger x-, y-, and z-dimension.
-### Output: Warning if there is no direct material with the same material type and fire classification and equal or larger dimensions.
+### Checks the rule: The direct material with the material type and material fire classification of the design must have equal or larger x-, y-, and z-dimensions.
+### Output: Warning if there is no direct material with the material type and material fire classification of the design and equal or larger dimensions.
 maic:ComponentMaterialRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -131,7 +131,7 @@ maic:ComponentMaterialRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### Checks the rule: The direct material with the same material type, fire classification and equal or larger dimensions must have capabilities with negative item shape and size to create the component's shape and size if their ShapeAndSize can be produced in the construction process.
+### Checks the rule: The direct material with the material type and material fire classification of the design and larger dimensions than the design must have capabilities to create the component's shape and size.
 ### Output: Warning if there is no direct material with the capability to create the component's shape.
 maic:ComponentMaterialRuleShapeIII rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
@@ -185,8 +185,8 @@ maic:ComponentMaterialRuleShapeIII rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### Checks the rule: The direct material stock must be equal or larger then the material demanded for components.
-### Output: Warning if there is too little direct material for the production of all components.
+### Checks the rule: The direct material stock must be equal or larger than the material demanded for components of the design.
+### Output: Warning if there is too little direct material for the production of components of the design.
 maic:ComponentMaterialRuleShapeIV rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -226,8 +226,8 @@ maic:ComponentMaterialRuleShapeIV rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### User Information: Displays which direct material is used for the production of a component.
-### Output: Mapping of components and direct material that can be used for production.
+### User Information: Extracts which direct material is used for the production of a component of the design.
+### Output: Mapping of components and direct material that can be used for production of a component of the design.
 maic:ComponentMaterialRuleShapeV rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -255,8 +255,8 @@ maic:ComponentMaterialRuleShapeV rdf:type owl:NamedIndividual , sh:NodeShape ;
 ##################################################################################################################
 ### ConnectionMaterialRuleShapes
 ##################################################################################################################
-### Checks the rule: The direct material with the same connection type must be available to the production process.
-### Output: Warning if there is no direct material with the same connection type.
+### Checks the rule: A direct material with the connection type of the design must be available.
+### Output: Warning if there is no direct material with the connection type of the design.
 maic:ConnectionMaterialRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -291,8 +291,8 @@ maic:ConnectionMaterialRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### Checks the rule: The direct material stock must be equal or larger then the material demanded for connections.
-### Output: Warning if there is too little direct material for the production of all connections.
+### Checks the rule: The direct material stock must be equal or larger than the material demanded for connections of the design.
+### Output: Warning if there is too little direct material for the production of all connections of the design.
 maic:ConnectionMaterialRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -335,8 +335,8 @@ maic:ConnectionMaterialRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### User Information: Displays which direct material is used for the production of an intersection.
-### Output: Mapping of intersections and direct material that can be used for production.
+### User Information: Extracts which direct material is used for the production of a connection of the design.
+### Output: Mapping of intersections and direct material that can be used for the production of a component of the desgin.
 maic:ConnectionMaterialRuleShapeIII rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -364,8 +364,8 @@ maic:ConnectionMaterialRuleShapeIII rdf:type owl:NamedIndividual , sh:NodeShape 
 ##################################################################################################################
 ### ShapeAndSizeRuleShapes
 ##################################################################################################################
-### Checks, the rule: The workstation must be able to handle the shape and size of the component.
-### Output: Waring if the workstation cannot handle the shape and size of the component.
+### Checks, the rule: The workstation must be able to handle the shape and size of the design.
+### Output: Waring if the workstation cannot handle the shape and size of the design.
 maic:ShapeAndSizeRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -406,8 +406,8 @@ maic:ShapeAndSizeRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### Checks, the rule: The workstation must be able to handle the mass of the component.
-### Output: Waring if the workstation cannot handle the mass of the component.
+### Checks, the rule: The workstation must be able to handle the mass of the design.
+### Output: Waring if the workstation cannot handle the mass of the design.
 maic:ShapeAndSizeRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -445,8 +445,8 @@ maic:ShapeAndSizeRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
 ##################################################################################################################
 ### NegativeShapeAndSizeRuleShape
 ##################################################################################################################
-### Checks the rule: The equipment must be able to create the negative shape and size of the component.
-### Output: Waring if the equipment cannot create the negative shape and size of the component.
+### Checks the rule: The equipment must be able to create the negative shape and size of the design.
+### Output: Waring if the equipment cannot create the negative shape and size of the design.
 maic:NegativeShapeAndSizeRuleShape rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -499,8 +499,8 @@ maic:NegativeShapeAndSizeRuleShape rdf:type owl:NamedIndividual , sh:NodeShape ;
 ##################################################################################################################
 ### ToleranceRuleShape
 ##################################################################################################################
-### Checks the rule: The equipment must be able to achieve the tolerance demanded by all components of the product.
-### Output: Waring if the equipment cannot achieve the tolerance demanded by all components of the product.
+### Checks the rule: The equipment must be able to achieve the tolerance demanded by the design.
+### Output: Waring if the equipment cannot achieve the tolerance of the design.
 maic:ToleranceRuleShape rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -539,7 +539,7 @@ maic:ToleranceRuleShape rdf:type owl:NamedIndividual , sh:NodeShape ;
 ##################################################################################################################
 ### DurationRuleShapes
 ##################################################################################################################
-### Checks the rule: The average cycle time of the production process must be equal or less than the lead time demanded.
+### Checks the rule: The average cycle time of the production process must be equal or smaller than the lead time demanded.
 ### Output: Waring if the production process exceeds the lead time demanded.
 maic:DurationRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
@@ -576,8 +576,8 @@ maic:DurationRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### User Information: Displays the total average cycle time of the production process.
-### Output: The total average cycle time of the production process.
+### User Information: Extracts the average cycle time of the production process.
+### Output: The average cycle time of the production process.
 maic:DurationRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -608,8 +608,8 @@ maic:DurationRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
 ##################################################################################################################
 ### CostRuleShapes
 ##################################################################################################################
-### User Information: Displays the costs of the direct material consumed for components.
-### Output: The costs of the direct material consumed for components.
+### User Information: Extracts the costs of the direct material consumed for components of the design.
+### Output: The costs of the direct material consumed for components of the design.
 maic:CostsRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -637,8 +637,8 @@ maic:CostsRuleShapeI rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### User Information: Displays the costs of the direct material consumed for intersections.
-### Output: The costs of the direct material consumed for intersections.
+### User Information: Extracts the costs of the direct material consumed for connections of the design.
+### Output: The costs of the direct material consumed for connections of the design.
 maic:CostsRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
@@ -669,7 +669,7 @@ maic:CostsRuleShapeII rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### User Information: Displays the costs of the direct equipment consumed.
+### User Information: Extracts the costs of the direct equipment consumed.
 ### Output: The costs of the direct equipment consumed.
 maic:CostsRuleShapeIII rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
@@ -701,7 +701,7 @@ maic:CostsRuleShapeIII rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### User Information: Displays the costs of the direct labour consumed.
+### User Information: Extracts the costs of the direct labour consumed.
 ### Output: The costs of the direct labour consumed.
 maic:CostsRuleShapeIV rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
@@ -733,8 +733,8 @@ maic:CostsRuleShapeIV rdf:type owl:NamedIndividual , sh:NodeShape ;
 
 
 
-### User Information: Displays the costs of all activities of the production process.
-### Output: The  costs of all activities of the production process.
+### User Information: Extracts the activity costs of the production process.
+### Output: The costs of all activities of the production process.
 maic:CostsRuleShapeV rdf:type owl:NamedIndividual , sh:NodeShape ;
  sh:sparql [
   rdf:type sh:SPARQLConstraint ;
