@@ -1,0 +1,98 @@
+PREFIX maic:  <http://www.semanticweb.org/maic#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sh:    <http://www.w3.org/ns/shacl#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+
+
+
+##################################################################################################################
+### Evaluation of design ontology's CQs
+##################################################################################################################
+### Evaluates the CQ: What is the architecture of the component?
+### Design ontology query CQ1
+SELECT *
+WHERE {
+    ?component a maic:Component .
+    ?component maic:hasShapeAndSize ?component_geometry .
+    ?component maic:forms ?component_intersection .
+};
+
+
+
+### Evaluates the CQ: What is the type of the component?
+### Design ontology query CQ2
+SELECT *
+WHERE {
+    ?component a maic:Component .
+    ?component maic:hasType ?component_type .
+};
+
+
+
+### Evaluates the CQ: What is the material of the component?
+### Design ontology query CQ3
+SELECT *
+WHERE {
+    ?component a maic:Component .
+    ?component maic:hasMaterialType ?component_material_type .
+    ?component_material_type maic:materialType ?component_material_type_material_type .
+};
+
+
+
+### Evaluates the CQ: What is the fire resistance of the component?
+### Design ontology query CQ4
+SELECT *
+WHERE {
+    ?component a maic:Component .
+    ?component maic:hasPerformance ?component_performance .
+    ?component_performance maic:fireSectionClassification ?component_section_classification .
+};
+
+
+
+##################################################################################################################
+### Evaluation of manufacturing ontology's CQs
+##################################################################################################################
+### Evaluates the CQ: What is the capability of the workstation?
+### Manufacturing ontology query CQ1
+SELECT *
+WHERE {
+    ?workstation a maic:WorkStation .
+    ?workstation maic:hasCapability ?workstation_capability .
+    ?workstation_capability maic:tolerance ?workstation_tolerance .
+    ?workstation_capability maic:hasAllowedItemShapeAndSize_min ?workstation_allowed_item_min .
+    ?workstation_capability maic:hasAllowedItemShapeAndSize_max ?workstation_allowed_item_max .
+};
+
+
+
+### Evaluates the CQ: What is the capability of the direct equipment?
+### Manufacturing ontology query CQ2
+SELECT *
+WHERE {
+    ?direct_equipment a maic:Direct_Equipment .
+    ?direct_equipment maic:hasCapability ?direct_equipment_capability .
+};
+
+
+
+### Evaluates the CQ: What is the capability of the direct labour?
+### Manufacturing ontology query CQ3
+SELECT *
+WHERE {
+    ?direct_labour a maic:Direct_Labour .
+    ?direct_labour maic:hasCapability ?direct_labour_capability .
+};
+
+
+
+### Evaluates the CQ: What is the capability of the direct material?
+### Manufacturing ontology query CQ4
+SELECT *
+WHERE {
+    ?direct_material a maic:Direct_Material .
+    ?direct_material maic:hasCapability ?direct_material_capability .
+};
